@@ -310,7 +310,7 @@ class AppProvider(Provider):
 
 View tests are simply custom boolean expressions that can be used in your templates. We may want to run boolean tests on specific objects to assert that they pass a test. For example we may want to test if a user is an owner of a company like this:
 
-```markup
+```html
 <div>
     {% if user is a_company_owner %}
         hey boss
