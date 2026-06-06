@@ -218,7 +218,7 @@ You can access the session here:
 
 !!! success
 
-    Learn more about session in the [Session](/advanced/sessions.md) documentation.
+    Learn more about session in the [Session](sessions.md) documentation.
 
 ## Config
 

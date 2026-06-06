@@ -6,13 +6,13 @@ All exceptions are handled by the ExceptionHandler class which is bound to the [
 
 This handler has a logic to decide how to handle exceptions depending on the exception type, the environment type, the request accepted content type and the [configured exception handlers](#adding-new-handlers).
 
-Every exception is also automatically logged with its full traceback through the [logging](/features/logging.md) system.
+Every exception is also automatically logged with its full traceback through the [logging](logging.md) system.
 
 This handler has by default one driver [Exceptionite](https://github.com/MasoniteFramework/exceptionite) which is responsible of handling errors in development by providing a lot of context to help debug your application.
 
 ## Debug Mode
 
-When [Debug mode](/features/environments.md#debug-mode) is enabled all exceptions are rendered through Exceptionite HTML debug page.
+When [Debug mode](../getting-started/environments.md#debug-mode) is enabled all exceptions are rendered through Exceptionite HTML debug page.
 
 When disabled, the default `errors/500.html`, `errors/404.html`, `errors/403.html` error pages are rendered depending on error type.
 
@@ -197,7 +197,7 @@ Now when your application throws a `ZeroDivisionError`, Masonite will use your h
 
 If you want to hook up an error tracking service such as Sentry or Rollbar you can do this through event listeners: each time an exception is raised, a `masonite.exception.{TheExceptionType}` is fired, allowing to run any custom logic.
 
-First [create a listener](/features/events.md#creating-a-listener) to run your custom logic:
+First [create a listener](../digging-deeper/events.md#creating-a-listener) to run your custom logic:
 
 ```python
 class SentryListener:
@@ -207,7 +207,7 @@ class SentryListener:
         # ...
 ```
 
-In a [Service Provider](/architecture/service-providers.md) you then need to register this listener:
+In a [Service Provider](../architecture/service-providers.md) you then need to register this listener:
 
 ```python
 class AppProvider(Provider):

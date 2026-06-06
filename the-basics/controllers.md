@@ -136,7 +136,7 @@ def show(self, request: Request):
 
 # Controller Locations
 
-Masonite will be able to pick up controllers (inheriting `Controller` class) using [string binding](../features/routing.md#controller-binding) in the registered controllers locations.
+Masonite will be able to pick up controllers (inheriting `Controller` class) using [string binding](routing.md#controller-binding) in the registered controllers locations.
 
 The default registered controllers location is `app/controllers` and is defined in project `Kernel.py` configuration file:
 

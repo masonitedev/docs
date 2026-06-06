@@ -4,7 +4,7 @@ Although Masonite uses `pytest` to run tests, Masonite's test suite is based on 
 
 # Testing Environment
 
-When running tests, Masonite will automatically set the [environment](../features/environments.md) to `testing`. You are free to define other testing environment configuration values as necessary.
+When running tests, Masonite will automatically set the [environment](../getting-started/environments.md) to `testing`. You are free to define other testing environment configuration values as necessary.
 
 You can create a `.env.testing` file. Feel free to load any testing environment variables in here. By default they will not be commited. When `pytest` runs it will additionally load and override any additional environment variables.
 

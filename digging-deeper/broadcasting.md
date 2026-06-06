@@ -46,7 +46,7 @@ Include the pusher-js script tag on your page
 ```
 !!! warning
 
-    This is the quickest way to install Pusher. But for a real app you will often use a build system to [install and compile assets](/features/compiling-assets.md#compiling) and will install the Javascript Pusher SDK with `npm install pusher-js` and then import Pusher class with `import Pusher from 'pusher-js';`.
+    This is the quickest way to install Pusher. But for a real app you will often use a build system to [install and compile assets](../the-basics/compiling-assets.md#compiling) and will install the Javascript Pusher SDK with `npm install pusher-js` and then import Pusher class with `import Pusher from 'pusher-js';`.
 
 Create a Pusher instance configured with your credentials
 
@@ -58,7 +58,7 @@ const pusher = new Pusher("478b45309560f3456211", {
 
 !!! warning
 
-    It is advised to use environment variables instead of hard-coding credentials client-side. If you're using Laravel Mix to [compile assets](/features/compiling-assets.md#compiling) then you should prefix your environment variables with `MIX_`.
+    It is advised to use environment variables instead of hard-coding credentials client-side. If you're using Laravel Mix to [compile assets](../the-basics/compiling-assets.md#compiling) then you should prefix your environment variables with `MIX_`.
 
 Now you're ready to subscribe to channels and listen for channels events.
 

@@ -4,7 +4,7 @@ Masonite includes a rate limiting feature which make it really easy to limit an 
 The most frequent use of this feature is to add throttling to some API endpoints but you could also
 use this to limit how many time a model can be updated, a job can be run in the queue or a mail should be sent.
 
-This feature is based on the application's [Cache](/cache.md) features. It will store the number of attempts of a given `key` and will also store the associated time window.
+This feature is based on the application's [Cache](cache.md) features. It will store the number of attempts of a given `key` and will also store the associated time window.
 
 # Overview
 

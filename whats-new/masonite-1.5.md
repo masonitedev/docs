@@ -10,7 +10,7 @@ Masonite 1.5 is releasing also with a new official package for adding RESTful AP
 
 ## HTTP Methods
 
-Masonite 1.5 also adds additional support HTTP methods like `PUT`, `PATCH` and `DELETE`. More information about these new routes can be found under the [Routing](../features/routing.md) documentation
+Masonite 1.5 also adds additional support HTTP methods like `PUT`, `PATCH` and `DELETE`. More information about these new routes can be found under the [Routing](../the-basics/routing.md) documentation
 
 ## Moving Dependencies
 
@@ -22,7 +22,7 @@ HTML forms only support GET and POST so there is no the ability to add any other
 
 ## Added Shorthand Route Helpers
 
-You can now use functions for routes instead of the classes. These new functions are just wrappers around the classes itself. Read more about this under the [Routing](../features/routing.md) documentation.
+You can now use functions for routes instead of the classes. These new functions are just wrappers around the classes itself. Read more about this under the [Routing](../the-basics/routing.md) documentation.
 
 ## Removed API from core
 

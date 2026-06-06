@@ -10,7 +10,7 @@ External packages, prints in your code can output content in console (as output 
 
 !!! warning
 
-    If you want to assert content output by a Masonite command you should use [Commands Tests](/testing/commands-tests.md#available-assertions) assertions instead.
+    If you want to assert content output by a Masonite command you should use [Commands Tests](commands-tests.md#available-assertions) assertions instead.
 
 
 ### Available Assertions

@@ -41,7 +41,7 @@ Masonite 5 and Masonite ORM 3 use Pendulum 3. If your application uses Pendulum 
 
 Masonite 5 ships with a complete logging system: 6 drivers (`terminal`, `single`, `daily`, `stack`, `syslog`, `slack`), 8 alert levels and automatic exception logging with full tracebacks.
 
-Add the provider and a `config/logging.py` file to enable it — see the [Logging documentation](../features/logging.md).
+Add the provider and a `config/logging.py` file to enable it — see the [Logging documentation](../the-basics/logging.md).
 
 # Repository and Documentation
 

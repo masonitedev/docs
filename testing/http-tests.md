@@ -67,7 +67,7 @@ user = User.find(1)
 self.actingAs(user).get("/")
 ```
 
-The [authentication guard](../features/authentication.md#guards) can also be specified to authenticate
+The [authentication guard](../security/authentication.md#guards) can also be specified to authenticate
 the user with the given guard:
 
 ```python
@@ -436,7 +436,7 @@ user = User.find(1)
 self.get("/login").assertAuthenticated(user)
 ```
 
-The [authentication guard](../features/authentication.md#guards) can also be specified to check the
+The [authentication guard](../security/authentication.md#guards) can also be specified to check the
 authentication state on the given guard.
 
 ```python
@@ -451,7 +451,7 @@ Assert that a user is not authenticated after the current request.
 self.get("/").assertGuest()
 ```
 
-The [authentication guard](../features/authentication.md#guards) can also be specified to check the
+The [authentication guard](../security/authentication.md#guards) can also be specified to check the
 authentication state on the given guard.
 
 

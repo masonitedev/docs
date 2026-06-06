@@ -16,8 +16,8 @@ a quick and simple implementation is ran, often offering the ability to inspect 
 
 Available features that can be mocked (for now) are:
 
-- [Mail](/features/mail.md)
-- [Notification](/features/notifications.md)
+- [Mail](../digging-deeper/mail.md)
+- [Notification](../digging-deeper/notifications.md)
 
 ## Mocking Mail
 

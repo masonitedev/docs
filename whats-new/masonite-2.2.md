@@ -62,7 +62,7 @@ ROUTES = [
 
 !!! success
 
-    Learn more in the [Routes documentation here](../features/routing.md#http-verbs).
+    Learn more in the [Routes documentation here](../the-basics/routing.md#http-verbs).
 
 ## JSON error responses
 

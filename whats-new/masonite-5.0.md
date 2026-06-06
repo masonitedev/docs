@@ -27,7 +27,7 @@ Log.stack("console", "slack").critical("Some message")
 * On-demand channels with `Log.build(driver, options)`.
 * **Unhandled exceptions are logged automatically** with their type, message and full traceback.
 
-Read more in the [Logging documentation](../features/logging.md).
+Read more in the [Logging documentation](../the-basics/logging.md).
 
 ## Python 3.10–3.13
 

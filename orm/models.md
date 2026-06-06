@@ -1220,7 +1220,7 @@ class User(Model):
 
     You cannot use both `__hidden__` and `__visible__` on the model.
 
-If you need more advanced serialization or are building a complex API you should use the framework's [API features](../features/api.md).
+If you need more advanced serialization or are building a complex API you should use the framework's [API features](../digging-deeper/api.md).
 
 # Changing Primary Key to use UUID
 

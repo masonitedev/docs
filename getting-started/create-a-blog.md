@@ -43,7 +43,7 @@ We'll talk more about the controller in a little bit.
 
 !!! success
 
-    You can read more about routes in the [Routing](/the-basics/routing.md) documentation
+    You can read more about routes in the [Routing](../the-basics/routing.md) documentation
 
 ### Creating our Route:
 
@@ -515,7 +515,7 @@ Javascript files are the same exact thing:
 
 !!! success
 
-    For more information on static files, checkout the [Static Files](../features/static-files.md) documentaton.
+    For more information on static files, checkout the [Static Files](../the-basics/static-files.md) documentaton.
 
 ### The Controller For Creating And The Container
 

@@ -14,7 +14,7 @@ ROUTES = [
 
 The first parameter is the URL you would like to be available in your application. In the above example, this will allow anybody to go to the `/welcome` URL.
 
-The second parameter is the [Controller](/features/controllers.md) you want to bind this route to.
+The second parameter is the [Controller](controllers.md) you want to bind this route to.
 
 ## Available Route Methods
 
@@ -54,7 +54,7 @@ Route.get('/welcome', 'WelcomeController@show')
 !!! warning
 
     When using string binding, you must ensure that this controller class can be imported correctly and that
-    the controller class is in a [registered controller location](/features/controllers.md#controller-locations).
+    the controller class is in a [registered controller location](controllers.md#controller-locations).
 
 Note that this is the prefered way as it will avoid circular dependencies as no import is required
 in your route file.
@@ -115,7 +115,7 @@ You may define several available methods on your routes to modify their behavior
 
 ## Middlewares
 
-You can add one or multiple [Routes Middlewares](/features/middleware.md#route-middleware):
+You can add one or multiple [Routes Middlewares](middleware.md#route-middleware):
 
 ```python
 Route.get('/welcome', 'WelcomeController@show').middleware('web')
@@ -124,7 +124,7 @@ Route.get('/settings', 'WelcomeController@settings').middleware('auth', 'web')
 
 This will attach the middleware key(s) to the route which will be picked up from your middleware configuration later in the request.
 
-You can exclude one or multiple [Routes Middlewares](/features/middleware.md#route-middleware) for a specific route:
+You can exclude one or multiple [Routes Middlewares](middleware.md#route-middleware) for a specific route:
 
 ```python
 Route.get('/about', 'WelcomeController@about').exclude_middleware('auth', 'custom')
