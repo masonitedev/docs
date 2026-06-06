@@ -1,68 +1,76 @@
-/* Laravel-inspired theme for Masonite documentation
-   Accent: Laravel red #FF2D20 over a clean white / zinc-dark canvas */
+/* Masonite brand theme for the documentation
+   Violet system from the brand manual over paper / ink neutrals,
+   matching masonite.dev. Sora + JetBrains Mono. */
 
 :root {
-  --masonite-red: #ff2d20;
-  --masonite-red-soft: #ff5a4d;
+  --masonite-violet: #6d4fe3;      /* interactive */
+  --masonite-violet-deep: #4a33a6; /* deep / hover */
+  --masonite-violet-lit: #9c82f2;  /* lit — dark-mode accent */
+  --masonite-ridge: #c9bbff;       /* ridge highlight */
+  --masonite-ink: #14181e;
+  --masonite-paper: #fbfaf8;
+  --masonite-panel: #f4f2ee;
 }
 
 /* ---------- Light scheme ---------- */
 [data-md-color-scheme="default"] {
-  --md-accent-fg-color: var(--masonite-red);
-  --md-typeset-a-color: var(--masonite-red);
+  --md-accent-fg-color: var(--masonite-violet);
+  --md-typeset-a-color: var(--masonite-violet);
   --md-primary-fg-color: #ffffff;
-  --md-primary-bg-color: #18181b;
-  --md-default-fg-color--light: #52525b;
+  --md-primary-bg-color: var(--masonite-ink);
+  --md-default-bg-color: var(--masonite-paper);
+  --md-default-fg-color--light: #5e626a;
+  --md-code-bg-color: var(--masonite-panel);
 }
 
-/* Translucent white header with a hairline border, like laravel.com */
+/* Translucent paper header with a hairline border, like masonite.dev */
 [data-md-color-scheme="default"] .md-header {
-  background: rgba(255, 255, 255, 0.85);
-  color: #18181b;
-  border-bottom: 1px solid #e4e4e7;
+  background: rgba(251, 250, 248, 0.85);
+  color: var(--masonite-ink);
+  border-bottom: 1px solid rgba(20, 24, 30, 0.12);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: none;
 }
 
 [data-md-color-scheme="default"] .md-search__form {
-  background-color: #f4f4f5;
+  background-color: var(--masonite-panel);
   border-radius: 0.5rem;
 }
 
 [data-md-color-scheme="default"] .md-search__input {
-  color: #18181b;
+  color: var(--masonite-ink);
 }
 
 [data-md-color-scheme="default"] .md-search__input::placeholder,
 [data-md-color-scheme="default"] .md-search__icon {
-  color: #71717a;
+  color: #5e626a;
 }
 
-/* ---------- Dark scheme ---------- */
+/* ---------- Dark scheme (brand-sanctioned ink ground) ---------- */
 [data-md-color-scheme="slate"] {
-  --md-accent-fg-color: var(--masonite-red-soft);
-  --md-typeset-a-color: var(--masonite-red-soft);
-  --md-default-bg-color: #0a0a0a;
-  --md-code-bg-color: #18181b;
+  --md-accent-fg-color: var(--masonite-violet-lit);
+  --md-typeset-a-color: var(--masonite-violet-lit);
+  --md-default-bg-color: var(--masonite-ink);
+  --md-code-bg-color: #1c2128;
 }
 
 [data-md-color-scheme="slate"] .md-header {
-  background: rgba(10, 10, 10, 0.85);
-  border-bottom: 1px solid #27272a;
+  background: rgba(20, 24, 30, 0.85);
+  border-bottom: 1px solid #232a33;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: none;
 }
 
 [data-md-color-scheme="slate"] .md-search__form {
-  background-color: #18181b;
+  background-color: #1c2128;
   border-radius: 0.5rem;
 }
 
 /* ---------- Shared chrome ---------- */
 
-/* Sidebar: bold section headings, quiet links, red active state */
+/* Sidebar: bold section headings, quiet links, violet active state */
 .md-nav__item--section > .md-nav__link {
   font-weight: 700;
   font-size: 0.72rem;
@@ -84,23 +92,25 @@
   color: var(--md-typeset-a-color);
 }
 
-/* Content typography, closer to Laravel's relaxed rhythm */
+/* Content typography */
 .md-typeset {
   font-size: 0.78rem;
   line-height: 1.7;
 }
 
 .md-typeset h1 {
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--md-default-fg-color);
 }
 
 .md-typeset h2 {
   font-weight: 700;
+  letter-spacing: -0.015em;
 }
 
 .md-typeset h3 {
-  font-weight: 650;
+  font-weight: 600;
 }
 
 /* Rounded, bordered code blocks */
@@ -113,28 +123,40 @@
 }
 
 [data-md-color-scheme="default"] .md-typeset .highlight {
-  border: 1px solid #e4e4e7;
+  border: 1px solid rgba(20, 24, 30, 0.12);
 }
 
 [data-md-color-scheme="slate"] .md-typeset .highlight {
-  border: 1px solid #27272a;
+  border: 1px solid #232a33;
 }
 
 /* Inline code chips */
 [data-md-color-scheme="default"] .md-typeset code {
-  background-color: #f4f4f5;
+  background-color: var(--masonite-panel);
   border-radius: 0.35rem;
 }
 
 /* Buttons / interactive accents */
 .md-typeset .md-button--primary {
-  background-color: var(--masonite-red);
-  border-color: var(--masonite-red);
+  background-color: var(--masonite-violet);
+  border-color: var(--masonite-violet);
+}
+
+.md-typeset .md-button--primary:hover {
+  background-color: var(--masonite-violet-deep);
+  border-color: var(--masonite-violet-deep);
 }
 
 /* Header title weight */
 .md-header__topic {
   font-weight: 700;
+}
+
+/* Header logo: keep the pyramid mark crisp */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.4rem;
+  width: auto;
 }
 
 /* Repo card in header: subtler */
