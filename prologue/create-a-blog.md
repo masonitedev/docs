@@ -515,7 +515,7 @@ Javascript files are the same exact thing:
 
 !!! success
 
-    For more information on static files, checkout the [Static Files](the-basics/static-files.md) documentaton.
+    For more information on static files, checkout the [Static Files](../features/static-files.md) documentaton.
 
 ### The Controller For Creating And The Container
 
