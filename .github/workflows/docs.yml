@@ -23,9 +23,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install MkDocs
-        run: pip install "mkdocs<2" mkdocs-material mkdocs-same-dir
+        run: pip install "mkdocs<2" mkdocs-material mkdocs-same-dir mkdocs-redirects
       - name: Build site
-        run: mkdocs build
+        run: mkdocs build --strict
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

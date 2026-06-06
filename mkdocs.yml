@@ -43,6 +43,46 @@ extra_css:
 plugins:
   - search
   - same-dir
+  - redirects:
+      redirect_maps:
+        # features/ was reorganized into Laravel-style sections in the
+        # 5.x documentation overhaul. Keep the old URLs working.
+        "features/configuration.md": "getting-started/configuration.md"
+        "features/environments.md": "getting-started/environments.md"
+        "prologue/create-a-blog.md": "getting-started/create-a-blog.md"
+        "features/facades.md": "architecture/facades.md"
+        "features/routing.md": "the-basics/routing.md"
+        "features/middleware.md": "the-basics/middleware.md"
+        "features/csrf.md": "the-basics/csrf.md"
+        "features/controllers.md": "the-basics/controllers.md"
+        "features/request.md": "the-basics/request.md"
+        "features/response.md": "the-basics/response.md"
+        "features/views.md": "the-basics/views.md"
+        "features/static-files.md": "the-basics/static-files.md"
+        "features/compiling-assets.md": "the-basics/compiling-assets.md"
+        "features/sessions.md": "the-basics/sessions.md"
+        "features/validation.md": "the-basics/validation.md"
+        "features/error-handling.md": "the-basics/error-handling.md"
+        "features/logging.md": "the-basics/logging.md"
+        "features/authentication.md": "security/authentication.md"
+        "features/authorization.md": "security/authorization.md"
+        "features/cors.md": "security/cors.md"
+        "features/hashing.md": "security/hashing.md"
+        "features/api.md": "digging-deeper/api.md"
+        "features/broadcasting.md": "digging-deeper/broadcasting.md"
+        "features/cache.md": "digging-deeper/cache.md"
+        "features/commands.md": "digging-deeper/commands.md"
+        "features/events.md": "digging-deeper/events.md"
+        "features/hashid.md": "digging-deeper/hashid.md"
+        "features/helpers.md": "digging-deeper/helpers.md"
+        "features/mail.md": "digging-deeper/mail.md"
+        "features/notifications.md": "digging-deeper/notifications.md"
+        "features/package-development.md": "digging-deeper/package-development.md"
+        "features/queues.md": "digging-deeper/queues.md"
+        "features/rates.md": "digging-deeper/rate-limiting.md"
+        "features/scheduling.md": "digging-deeper/scheduling.md"
+        "features/tinker.md": "digging-deeper/tinker.md"
+        "features/uploading.md": "digging-deeper/filesystem.md"
 
 markdown_extensions:
   - admonition
@@ -68,51 +108,57 @@ extra:
 nav:
   - Home: README.md
   - Prologue:
-    - "Creating A Blog Tutorial": prologue/create-a-blog.md
-    - "Release Cycle": prologue/release-cycle.md
-    - "Contributing Guide": prologue/contributing-guide.md
+    - Release Notes:
+      - "Masonite 5.1": whats-new/masonite-5.1.md
+      - "Masonite 5.0": whats-new/masonite-5.0.md
+    - "Upgrade Guide": upgrade-guide/masonite-4.0-to-5.0.md
+    - "Contribution Guide": prologue/contributing-guide.md
     - "How To Contribute": prologue/how-to-contribute.md
-  - The Basics:
-    - "Routing": features/routing.md
-    - "Controllers": features/controllers.md
-    - "Middleware": features/middleware.md
-    - "Response": features/response.md
-    - "Request": features/request.md
-    - "Static Files": features/static-files.md
-    - "Views": features/views.md
-    - "Environments": features/environments.md
-    - "Configuration": features/configuration.md
-    - "Error Handling": features/error-handling.md
-  - Features:
-    - "API Development": features/api.md
-    - "Authentication": features/authentication.md
-    - "Authorization": features/authorization.md
-    - "Broadcasting": features/broadcasting.md
-    - "Caching": features/cache.md
-    - "Compiling Assets": features/compiling-assets.md
-    - "Commands": features/commands.md
-    - "CSRF Protection": features/csrf.md
-    - "Events": features/events.md
-    - "Facades": features/facades.md
-    - "Filesystem and Uploading": features/uploading.md
-    - "Hash ID's": features/hashid.md
-    - "Helpers": features/helpers.md
-    - "Logging": features/logging.md
-    - "Mail": features/mail.md
-    - "Notifications": features/notifications.md
-    - "Package Development": features/package-development.md
-    - "Queues and Jobs": features/queues.md
-    - "Rate Limiting": features/rates.md
-    - "Sessions": features/sessions.md
-    - "Task Scheduling": features/scheduling.md
-    - "Tinker Shell (REPL)": features/tinker.md
-    - "Validation": features/validation.md
-  - Architecture:
-    - "Service Providers": architecture/service-providers.md
+    - "Release Cycle": prologue/release-cycle.md
+    - "Sponsors": prologue/sponsors.md
+  - Getting Started:
+    - "Configuration": getting-started/configuration.md
+    - "Environments": getting-started/environments.md
+    - "Tutorial: Build a Blog": getting-started/create-a-blog.md
+  - Architecture Concepts:
     - "Service Container": architecture/service-container.md
+    - "Service Providers": architecture/service-providers.md
+    - "Facades": architecture/facades.md
+  - The Basics:
+    - "Routing": the-basics/routing.md
+    - "Middleware": the-basics/middleware.md
+    - "CSRF Protection": the-basics/csrf.md
+    - "Controllers": the-basics/controllers.md
+    - "Requests": the-basics/request.md
+    - "Responses": the-basics/response.md
+    - "Views": the-basics/views.md
+    - "Static Files": the-basics/static-files.md
+    - "Compiling Assets": the-basics/compiling-assets.md
+    - "Sessions": the-basics/sessions.md
+    - "Validation": the-basics/validation.md
+    - "Error Handling": the-basics/error-handling.md
+    - "Logging": the-basics/logging.md
+  - Digging Deeper:
+    - "API Development": digging-deeper/api.md
+    - "Broadcasting": digging-deeper/broadcasting.md
+    - "Caching": digging-deeper/cache.md
+    - "Craft Console": digging-deeper/commands.md
+    - "Events": digging-deeper/events.md
+    - "File Storage": digging-deeper/filesystem.md
+    - "Hash ID's": digging-deeper/hashid.md
+    - "Helpers": digging-deeper/helpers.md
+    - "Mail": digging-deeper/mail.md
+    - "Notifications": digging-deeper/notifications.md
+    - "Package Development": digging-deeper/package-development.md
+    - "Queues and Jobs": digging-deeper/queues.md
+    - "Rate Limiting": digging-deeper/rate-limiting.md
+    - "Task Scheduling": digging-deeper/scheduling.md
+    - "Tinker Shell (REPL)": digging-deeper/tinker.md
   - Security:
-    - "CORS": features/cors.md
-    - "Hashing": features/hashing.md
+    - "Authentication": security/authentication.md
+    - "Authorization": security/authorization.md
+    - "CORS": security/cors.md
+    - "Hashing": security/hashing.md
   - Masonite ORM:
     - "Introduction": orm/introduction.md
     - "Installation": orm/installation.md
@@ -138,32 +184,25 @@ nav:
     - "Masonite Debugbar": official-packages/masonite-debugbar.md
   - How-to Guides:
     - "Handling AJAX requests with expired authentication": how-to-guides/expired-auth-with-ajax.md
-    - "Build Email Verification from Scratch With Masonite Framework and JSON Web Tokens": https://dev.to/nioperas06/build-email-verification-from-scratch-with-masonite-framework-and-json-web-tokens-mf7
-    - "Deploying a Masonite Application to Heroku": https://dev.to/masonite/deploying-a-masonite-application-to-heroku-45jp
-    - "How To Deploy Masonite to PythonAnywhere": https://dev.to/masonite/deploying-masonite-to-pythonanywhere-26lj
-    - "How-To: Use RabbitMQ with Masonite 2.0 queues": https://dev.to/masonite/how-to-use-rabbitmq-with-masonite-20-queues-4105
-    - "How To Use The Repository Pattern with Masonite": https://dev.to/masonite/repository-pattern-with-masonite-4a0n
-    - "Making Masonite and Laravel Mix work together": https://dev.to/nioperas06/lets-make-masonite-framework-and-laravel-mix-work-together--3lbj
-  - What's New:
-    - "Masonite 1.3": whats-new/masonite-1.3.md
-    - "Masonite 1.4": whats-new/masonite-1.4.md
-    - "Masonite 1.5": whats-new/masonite-1.5.md
-    - "Masonite 1.6": whats-new/masonite-1.6.md
-    - "Masonite 2.0": whats-new/masonite-2.0.md
-    - "Masonite 2.1": whats-new/masonite-2.1.md
-    - "Masonite 2.2": whats-new/masonite-2.2.md
-    - "Masonite 2.3": whats-new/masonite-2.3.md
-    - "Masonite 3.0": whats-new/masonite-3.0.md
-    - "Masonite 4.0": whats-new/masonite-4.0.md
-    - "Masonite 5.0": whats-new/masonite-5.0.md
-  - Upgrade Guide:
-    - "Masonite 1.3 to 1.4": upgrade-guide/masonite-1.3-to-1.4.md
-    - "Masonite 1.4 to 1.5": upgrade-guide/masonite-1.4-to-1.5.md
-    - "Masonite 1.5 to 1.6": upgrade-guide/masonite-1.5-to-1.6.md
-    - "Masonite 1.6 to 2.0": upgrade-guide/masonite-1.6-to-2.0.md
-    - "Masonite 2.0 to 2.1": upgrade-guide/masonite-2.0-to-2.1.md
-    - "Masonite 2.1 to 2.2": upgrade-guide/masonite-2.1-to-2.2.md
-    - "Masonite 2.2 to 2.3": upgrade-guide/masonite-2.2-to-2.3.md
-    - "Masonite 2.3 to 3.0": upgrade-guide/masonite-2.3-to-3.0.md
-    - "Masonite 3.0 to 4.0": upgrade-guide/masonite-3.0-to-4.0.md
-    - "Masonite 4.0 to 5.0": upgrade-guide/masonite-4.0-to-5.0.md
+  - Previous Releases:
+    - What's New:
+      - "Masonite 4.0": whats-new/masonite-4.0.md
+      - "Masonite 3.0": whats-new/masonite-3.0.md
+      - "Masonite 2.3": whats-new/masonite-2.3.md
+      - "Masonite 2.2": whats-new/masonite-2.2.md
+      - "Masonite 2.1": whats-new/masonite-2.1.md
+      - "Masonite 2.0": whats-new/masonite-2.0.md
+      - "Masonite 1.6": whats-new/masonite-1.6.md
+      - "Masonite 1.5": whats-new/masonite-1.5.md
+      - "Masonite 1.4": whats-new/masonite-1.4.md
+      - "Masonite 1.3": whats-new/masonite-1.3.md
+    - Upgrade Guides:
+      - "Masonite 3.0 to 4.0": upgrade-guide/masonite-3.0-to-4.0.md
+      - "Masonite 2.3 to 3.0": upgrade-guide/masonite-2.3-to-3.0.md
+      - "Masonite 2.2 to 2.3": upgrade-guide/masonite-2.2-to-2.3.md
+      - "Masonite 2.1 to 2.2": upgrade-guide/masonite-2.1-to-2.2.md
+      - "Masonite 2.0 to 2.1": upgrade-guide/masonite-2.0-to-2.1.md
+      - "Masonite 1.6 to 2.0": upgrade-guide/masonite-1.6-to-2.0.md
+      - "Masonite 1.5 to 1.6": upgrade-guide/masonite-1.5-to-1.6.md
+      - "Masonite 1.4 to 1.5": upgrade-guide/masonite-1.4-to-1.5.md
+      - "Masonite 1.3 to 1.4": upgrade-guide/masonite-1.3-to-1.4.md

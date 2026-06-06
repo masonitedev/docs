@@ -87,5 +87,13 @@ $RECYCLE.BIN/
 *.lnk
 
 
-# End of https://www.gitignore.io/api/osx,linux,windowssite/
+# End of https://www.gitignore.io/api/osx,linux,windows
+
+# MkDocs build output
+site/
+
+# Python virtual environments
+.venv/
+venv/
+
 node_modules/
