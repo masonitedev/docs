@@ -5,7 +5,7 @@ Masonite 5.0 is the first release published from the [masonitedev](https://githu
 ## New Home and Package Names
 
 * The framework moved to [github.com/masonitedev/masonite](https://github.com/masonitedev/masonite) and is now published on PyPI as **`masonite-framework`**.
-* Masonite ORM moved to [github.com/masonitedev/orm](https://github.com/masonitedev/orm) and is now published as **`masoniteorm`**.
+* Masonite ORM moved to [github.com/masonitedev/orm](https://github.com/masonitedev/orm) and is now published as **`masonite-framework-orm`**.
 * Imports are unchanged in both packages.
 * The legacy repositories and PyPI packages (`masonite`, `masonite-orm`) are deprecated and will no longer receive updates.
 

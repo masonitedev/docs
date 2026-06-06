@@ -21,11 +21,11 @@ Your imports do not change — you still `import masonite` / `from masonite impo
 
 # Masonite ORM
 
-The ORM package has been renamed from `masonite-orm` to `masoniteorm` (matching its import name). Masonite 5 depends on it automatically, but if your `requirements.txt` pins the ORM directly, update it:
+The ORM package has been renamed from `masonite-orm` to `masonite-framework-orm`. Masonite 5 depends on it automatically, but if your `requirements.txt` pins the ORM directly, update it:
 
 ```
 $ pip uninstall masonite-orm
-$ pip install "masoniteorm>=3,<4"
+$ pip install "masonite-framework-orm>=3,<4"
 ```
 
 Imports do not change — you still `from masoniteorm.models import Model`.
