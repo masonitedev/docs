@@ -4,31 +4,13 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ## Getting Started
 
-The framework has 2 main parts: The "masonite" repo and the "cookie-cutter" repo.
+All the development of the framework happens in the [masonitedev/masonite](https://github.com/masonitedev/masonite) repository: the framework itself, the `craft` and `masonite` CLI tools, and the project skeleton.
 
-The `masonitedev/cookie-cutter` repository is the main repository that will install when creating new projects using the `project start` command. This is actually a full Masonite project. When you run `project start` it simply reaches out to this GitHub repo, fetches the zip and unzips it on your computer. Not much development will be done in this repository and won't be changed unless something requires changes in the default installation project structure.
+Since Masonite 5.1 the starter project that `masonite new` (and its alias `project start`) creates lives **inside the framework package**, in the `src/masonite/skeleton/` directory of the `masonite` repository. If you want to change the default installation project structure (the welcome page, default configuration files, starter routes and so on), that directory is the place to make your changes — there is no separate "cookie-cutter" repository to fork anymore.
 
-The `MasoniteFramework/core` repository is deprecated and development has been moved into `masonitedev/masonite`. This repository contains all the development of Masonite and contains all the releases for Masonite. If you need to fix a bug or add a new feature then this is the repository to fork and make your changes from.
-
-The `MasoniteFramework/craft` is deprecated. This was where the craft CLI tool lived that has since been moved into the `masonite` repository.
-
-## Getting the Masonite cookie-cutter repository up and running to be edited
+The legacy `MasoniteFramework/*` repositories (`masonite`, `core`, `craft`, `cookie-cutter`) are all deprecated.
 
 [You can read about how the framework flows, works and architectural concepts here](https://docs.masonite.dev/architecture/service-providers)
-
-This repo is simple and will be able to be installed following the installation instruction in the README.
-
-* Fork the `masonitedev/cookie-cutter` repo.
-* Clone that repo into your computer:
-  * `git clone http://github.com/your-username/cookie-cutter.git`
-* Checkout the current release branch \(example: `develop`\)
-  * `git checkout -b develop`
-* You should now be on a `develop` local branch.
-* Run `git pull origin develop` to get the current release version.
-* From there simply create your feature branches \(`<feature|fix>-<issue-number>`\) and make your desired changes.
-* Push to your origin repository:
-  * `git push origin change-default-orm`
-* Open a pull request and follow the PR process below
 
 ## Editing the Masonite repository
 

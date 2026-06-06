@@ -114,7 +114,18 @@ nav:
     - "CORS": features/cors.md
     - "Hashing": features/hashing.md
   - Masonite ORM:
-    - "To Masonite ORM Docs": https://github.com/masonitedev/orm
+    - "Introduction": orm/introduction.md
+    - "Installation": orm/installation.md
+    - "Models": orm/models.md
+    - "Query Builder": orm/query-builder.md
+    - "Schema & Migrations": orm/schema-and-migrations.md
+    - "Seeding": orm/seeding.md
+    - "Collections": orm/collections.md
+    - "Commands": orm/commands.md
+    - "Postgres Schemas": orm/postgres-schema.md
+    - "Tips & Tricks": orm/tips-and-tricks.md
+    - "Orator To Masonite ORM": orm/orator-to-masonite-orm.md
+    - "White Page": orm/white-page.md
   - Testing:
     - "Getting Started": testing/getting-started.md
     - "HTTP Tests": testing/http-tests.md

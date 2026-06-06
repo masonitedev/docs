@@ -60,7 +60,18 @@
 
 ## Masonite ORM
 
-* [To Masonite ORM Docs](https://github.com/masonitedev/orm)
+* [Introduction](orm/introduction.md)
+* [Installation](orm/installation.md)
+* [Models](orm/models.md)
+* [Query Builder](orm/query-builder.md)
+* [Schema & Migrations](orm/schema-and-migrations.md)
+* [Seeding](orm/seeding.md)
+* [Collections](orm/collections.md)
+* [Commands](orm/commands.md)
+* [Postgres Schemas](orm/postgres-schema.md)
+* [Tips & Tricks](orm/tips-and-tricks.md)
+* [Orator To Masonite ORM](orm/orator-to-masonite-orm.md)
+* [White Page](orm/white-page.md)
 
 ## Testing
 
@@ -99,6 +110,7 @@
 * [Masonite 3.0](whats-new/masonite-3.0.md)
 * [Masonite 4.0](whats-new/masonite-4.0.md)
 * [Masonite 5.0](whats-new/masonite-5.0.md)
+* [Masonite 5.1](whats-new/masonite-5.1.md)
 
 ## Upgrade Guide
 

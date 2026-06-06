@@ -56,73 +56,66 @@ $ sudo apt-get install python3.10-dev python3-pip libssl-dev build-essential pyt
 
     Be sure to visit the [Masonite repository](https://github.com/masonitedev/masonite) for help or guidance.
 
-Masonite excels at being simple to install and get going. If you are coming from previous versions of Masonite, the order of some of the installation steps have changed a bit.
-
-Firstly, open a terminal and head to a directory you want to create your application in. You might want to create it in a programming directory for example:
-
-```text
-$ cd ~/programming
-$ mkdir myapp
-$ cd myapp
-```
-
-If you are on windows you can just create a directory and open the directory in the Powershell.
-
-## Activating Our Virtual Environment \(optional\)
-
-Although this step is technically optional, it is highly recommended. You can create a virtual environment if you don't want to install all of masonite's dependencies on your systems Python. If you use virtual environments then create your virtual environment by running:
+Masonite excels at being simple to install and get going. First install the Masonite package:
 
 ```text title="terminal"
-$ python -m venv venv
-$ source venv/bin/activate
-```
-
-or if you are on Windows:
-
-```text title="terminal"
-$ python -m venv venv
-$ ./venv/Scripts/activate
-```
-
-!!! info
-
-    The `python` command here is utilizing Python 3. Your machine may run Python 2 \(typically 2.7\) by default for UNIX machines. You may set an alias on your machine for Python 3 or simply run `python3` anytime you see the `python` command.
-
-    For example, you would run `python3 -m venv venv` instead of `python -m venv venv`
-
-# Installation
-
-First install the Masonite package:
-
-```
 $ pip install masonite-framework
 ```
 
-Then start a new project:
+Then create a new application:
 
-```
-$ project start .
+```text title="terminal"
+$ masonite new blog
 ```
 
-This will create a new project in the current directory.
+This starts an interactive wizard that guides you through everything with arrow-key menus:
+
+* the **application stack** — full-stack (server rendered views) or API only,
+* the **frontend preset** — Tailwind CSS (default), Bootstrap, Vue 3, React or none,
+* the **database** — SQLite (default), MySQL or Postgres,
+* whether to create a **virtual environment** and install the dependencies (recommended),
+* whether to initialize a **git repository**.
+
+The wizard then crafts your project, writes your `.env` file, generates your application key and offers to start the development server right away. Open `http://localhost:8000` and you will see your new application's welcome page.
 
 !!! info
 
-    If you want to create the project in a new directory (e.g. `my_project`) you must provide the directory name with `project start my_project`.
+    `masonite new .` crafts the application in the current directory (it must be empty), and `project start` keeps working as an alias of `masonite new` if you are used to previous versions of Masonite.
 
-Then install Masonite dependencies:
+## Scripting the Installation \(optional\)
 
+Every wizard question is also a flag, so you can skip the questions entirely — useful in scripts, CI or when you already know what you want:
+
+```text title="terminal"
+$ masonite new blog --api --db=postgres --no-input
 ```
-$ project install
+
+| Flag | Description |
+| :--- | :--- |
+| `--api` | Scaffold an API-ready project \(publishes `config/api.py` and enables the `ApiProvider`\) |
+| `--preset=` | Frontend preset: `tailwind`, `bootstrap`, `vue`, `react` or `none` |
+| `--db=` | Database driver: `sqlite`, `mysql` or `postgres` |
+| `--no-venv` | Do not create a virtual environment or install dependencies |
+| `--no-git` | Do not initialize a git repository |
+| `--no-serve` | Do not offer to start the development server |
+| `--no-input` | Ask no questions and use the defaults |
+| `--force` | Craft into a non-empty directory |
+
+If you skipped the virtual environment during creation you can always set one up manually inside your project:
+
+```text title="terminal"
+$ cd blog
+$ python -m venv .venv
+$ source .venv/bin/activate   # Windows: .venv\Scripts\activate
+$ pip install -r requirements.txt
 ```
 
-!!! info
+## Running the Development Server
 
-    If you have created the project in a new directory you must go to this directory before running `project install`.
+Inside your project \(with the virtual environment activated\) run the migrations and start the server:
 
-Once installed you can run the development server:
-
-```
+```text title="terminal"
+$ python craft migrate
 $ python craft serve
 ```
 

@@ -97,7 +97,7 @@ self.assertDeleted(user)
 
 ### assertSoftDeleted
 
-Assert that the given model instance has been [soft deleted](https://orm.masoniteproject.com/models#soft-deleting) from the database.
+Assert that the given model instance has been [soft deleted](../orm/models.md#soft-deleting) from the database.
 
 ```python
 self.assertSoftDeleted(user)

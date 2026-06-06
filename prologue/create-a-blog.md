@@ -254,7 +254,7 @@ Our posts table should have a few obvious columns that we will simplify for this
 
 ### Craft Command
 
-Not surprisingly, we have a command to create migrations. You can read more about [Database Migrations here](https://orm.masoniteproject.com/schema-and-migrations) but we'll simplify it down to the command and explain a little bit of what's going on:
+Not surprisingly, we have a command to create migrations. You can read more about [Database Migrations here](../orm/schema-and-migrations.md) but we'll simplify it down to the command and explain a little bit of what's going on:
 
 === "terminal"
 
@@ -300,7 +300,7 @@ Lets add a title, an author, and a body to our posts tables.
 
 !!! success
 
-    This should be fairly straight forward but if you want to learn more, be sure to read the [Database Migrations](https://orm.masoniteproject.com/schema-and-migrations) documentation.
+    This should be fairly straight forward but if you want to learn more, be sure to read the [Database Migrations](../orm/schema-and-migrations.md) documentation.
 
 Now we can migrate this migration to create the posts table
 
@@ -394,7 +394,7 @@ The relationship is pretty straight forward here. Remember that we created a for
 
 !!! success
 
-    We won't go into much more detail here about different types of relationships but to learn more, refer to [Masonite ORM Relationships](https://orm.masoniteproject.com/models#relationships) documentation.
+    We won't go into much more detail here about different types of relationships but to learn more, refer to [Masonite ORM Relationships](../orm/models.md#relationships) documentation.
 
 ## Designing Our Blog
 

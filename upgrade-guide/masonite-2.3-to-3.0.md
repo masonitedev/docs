@@ -241,4 +241,4 @@ If you are using the `session()` helper than you will need to take a similiar ap
 
 # Upgrading Orator
 
-For upgrading from Orator to Masonite please read the [Orator to Masonite ORM guide](https://orm.masoniteproject.com/orator-to-masonite-orm)
+For upgrading from Orator to Masonite please read the [Orator to Masonite ORM guide](../orm/orator-to-masonite-orm.md)

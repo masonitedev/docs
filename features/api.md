@@ -69,6 +69,10 @@ $ python craft migrate
 
 ## Configuration
 
+!!! info
+
+    If you created your application with `masonite new --api` (or chose **API only** in the wizard), all of this is already set up for you: the `api.py` config file, the `ApiProvider` and a `JWT_SECRET` in your `.env` file. You can skip to [Authentication](#authentication).
+
 Next, you can create a new API config file. You can do so simply by running the install command:
 
 ```python

@@ -13,8 +13,12 @@ Setting up Masonite Debugbar is simple.
 First, install the package:
 
 ```
-$ pip install masonite-debugbar
+$ pip install masonite-framework-debugbar
 ```
+
+!!! note
+
+    The import name remains `debugbar`. Versions up to 1.0.1 were published as `masonite-debugbar`. The package is maintained at [masonitedev/debugbar](https://github.com/masonitedev/debugbar).
 
 
 Put the provider at the end of your provider list:

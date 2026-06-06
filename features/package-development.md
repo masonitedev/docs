@@ -4,7 +4,7 @@ Creating packages is very simple for Masonite. You can create a package and publ
 
 As a developer, you will be responsible for both making packages and consuming packages. In this documentation we'll talk about both. We'll start by talking about how to make a package and then talk about how to use that package or other third party packages.
 
-You can browse Masonite packages (official and community) on: [packages.masoniteproject.com](https://packages.masoniteproject.com) (alpha version).
+You can browse Masonite packages (official and community) on [PyPI under the `Framework :: Masonite` classifier](https://pypi.org/search/?c=Framework+%3A%3A+Masonite).
 
 Masonite, being a Python framework, you can obviously use all Python packages that aren’t designed for a specific framework. For example, you can obviously use a library like `requests` but you can’t use specific Django Rest Framework.
 
@@ -162,9 +162,9 @@ This will install `twine` if not installed yet, build the package, upload it to 
 
     You should always check that the package name is available on PyPi and that the version number to publish has not been published before. Else you won't be able to publish your package.
 
-#### Make the package available on masonite packages list
+#### Make the package discoverable as a Masonite package
 
-To make your package available on [packages.masoniteproject.com](https://packages.masoniteproject.com) (alpha version) you need to add `Framework :: Masonite` classifier in `setup.py`:
+To make your package discoverable on [PyPI as a Masonite package](https://pypi.org/search/?c=Framework+%3A%3A+Masonite) you need to add the `Framework :: Masonite` classifier in `setup.py`:
 
 ```python
 # setup.py
@@ -173,8 +173,6 @@ To make your package available on [packages.masoniteproject.com](https://package
         "Framework :: Masonite",
     ]
 ```
-
-You can find more information on the [website FAQ](https://packages.masoniteproject.com/faq).
 
 ## Registering Resources
 
