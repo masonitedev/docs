@@ -1,5 +1,7 @@
 # Masonite 4
 
+> **Note:** Masonite 4.0 was the final version published to PyPI as the `masonite` package. Starting with [Masonite 5.0](masonite-5.0.md), the framework is published as `masonite-framework` from the [masonitedev](https://github.com/masonitedev) organization.
+
 The primary goal of Masonite was to restructure the Masonite internals so that I can make sure Masonite is around for the next 5-10 years. Masonite started as a learning project and went through version 1-4 in 4 years. In the very beginning, there really was no clear vision for the direction of the project so the foundation was not well thought out. It wasn't until version 2 that there was a clear vision and major structural changes. **Version 1 looked incredibly different than version 3 yet they were built on the same foundation. You can see the issue ..** There would be no way we would be able to get to version 6+ on the same foundation as version 1. Masonite needed a complete foundational rewrite. **Meet Version 4.**
 
 Masonite originally started as a learning project in December of 2017. Over the years it has been a giant learning experience and Masonite has turned into something I never could have imagined. Because of the success that Masonite had, I found it was important to take a step back and make sure that the foundation of Masonite was built in a way that allowed Masonite to be as successful as it can be. Masonite 4 was written from complete scratch with everything I've learned over 4 years of maintaining the framework.

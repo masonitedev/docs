@@ -20,12 +20,12 @@ These, among many other features, are all shipped out of the box and ready to go
 
 In order to use Masonite, you’ll need:
 
-* Python <= 3.11
+* Python 3.10 - 3.13
 * Latest version of OpenSSL
 * Pip3
 
 {% hint style="warning" %}
-All commands of python and pip in this documentation is assuming they are pointing to the correct Python 3 versions. For example, anywhere you see the `python` command ran it is assuming that is a Python 3.7+ Python installation. If you are having issues with any installation steps just be sure the commands are for Python 3.7+ and not 2.7 or below.
+All commands of python and pip in this documentation is assuming they are pointing to the correct Python 3 versions. For example, anywhere you see the `python` command ran it is assuming that is a Python 3.10+ Python installation. If you are having issues with any installation steps just be sure the commands are for Python 3.10+ and not 2.7 or below.
 {% endhint %}
 
 ### Linux
@@ -44,7 +44,7 @@ Or you may need to specify your `python3.x-dev` version:
 
 {% code title="terminal" %}
 ```text
-$ sudo apt-get install python3.7-dev python3-pip libssl-dev build-essential python3-venv
+$ sudo apt-get install python3.10-dev python3-pip libssl-dev build-essential python3-venv
 ```
 {% endcode %}
 
@@ -59,7 +59,7 @@ $ sudo apt-get install python3.7-dev python3-pip libssl-dev build-essential pyth
 ## Installation
 
 {% hint style="success" %}
-Be sure to join the [Discord Community](https://slack.masoniteproject.com) for help or guidance.
+Be sure to visit the [Masonite repository](https://github.com/masonitedev/masonite) for help or guidance.
 {% endhint %}
 
 Masonite excels at being simple to install and get going. If you are coming from previous versions of Masonite, the order of some of the installation steps have changed a bit.
@@ -105,7 +105,7 @@ For example, you would run `python3 -m venv venv` instead of `python -m venv ven
 First install the Masonite package:
 
 ```
-$ pip install masonite
+$ pip install masonite-framework
 ```
 
 Then start a new project:

@@ -14,7 +14,7 @@ There is now a new cache folder under `bootstrap/cache` which will be used to st
 
 ## New Cache and Broadcast Configuration
 
-Masonite 1.4 brings a new `config/cache.py` and `config/broadcast.py` files. These files can be found on the [GitHub](https://github.com/MasoniteFramework/masonite) page and can be copied and pasted into your project. Take a look at the new [config/cache.py](https://github.com/MasoniteFramework/masonite/blob/v1.4/config/cache.py) file and the [config/broadcast.py](https://github.com/MasoniteFramework/masonite/blob/v1.4/config/broadcast.py) file. Just copy and paste those configuration files into your project.
+Masonite 1.4 brings a new `config/cache.py` and `config/broadcast.py` files. These files can be found on the [GitHub](https://github.com/masonitedev/masonite) page and can be copied and pasted into your project. Take a look at the new [config/cache.py](https://github.com/masonitedev/masonite/blob/v1.4/config/cache.py) file and the [config/broadcast.py](https://github.com/masonitedev/masonite/blob/v1.4/config/broadcast.py) file. Just copy and paste those configuration files into your project.
 
 ## 3 New Service Providers
 
@@ -53,7 +53,7 @@ Masonite 1.4 adds CSRF protection. So anywhere there is any POST form request, y
 </form>
 ```
 
-This type of protection prevents cross site forgery. In order to activate this feature, we also need to add the [CSRF middleware](https://github.com/MasoniteFramework/masonite/blob/master/app/http/middleware/CsrfMiddleware.py). Copy and paste the middleware into your project under the `app/http/middleware/CsrfMiddleware.py` file.
+This type of protection prevents cross site forgery. In order to activate this feature, we also need to add the [CSRF middleware](https://github.com/masonitedev/masonite/blob/master/app/http/middleware/CsrfMiddleware.py). Copy and paste the middleware into your project under the `app/http/middleware/CsrfMiddleware.py` file.
 
 Lastly, put that middleware into the `HTTP_MIDDLEWARE` list inside `config/middleware.py` like so:
 
@@ -66,7 +66,7 @@ HTTP_MIDDLEWARE = [
 
 ## Changes to Database Configuration
 
-There has been a slight change in the constants used in the [config/database.py](https://github.com/MasoniteFramework/masonite/blob/master/config/database.py) file. Mainly just for consistency and coding standards. Your file may have some slight changes but this change is optional. If you do make this change, be sure to change any places in your code where you have used the Orator Query Builder. For example any place you may have:
+There has been a slight change in the constants used in the [config/database.py](https://github.com/masonitedev/masonite/blob/master/config/database.py) file. Mainly just for consistency and coding standards. Your file may have some slight changes but this change is optional. If you do make this change, be sure to change any places in your code where you have used the Orator Query Builder. For example any place you may have:
 
 ```python
 from config import database

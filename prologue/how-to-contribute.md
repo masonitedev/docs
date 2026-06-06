@@ -26,7 +26,7 @@ Comments don't affect the working code so if you want to get used to contributin
 
 ## Write Tests
 
-[Masonite package](https://github.com/MasoniteFramework/masonite) requires testing. If you want to search through all the tests in the tests directories of those repositories and write additional tests and use cases then that will be great! There are already over 100 tests but you can always write more. With more testing comes more stability. Especially as people start to contribute to the project. Check the tests that are already there and write any use cases that are missing. These tests can be things such as special characters in a url or other oddities that may not have been thought of when using TDD for that feature.
+[Masonite package](https://github.com/masonitedev/masonite) requires testing. If you want to search through all the tests in the tests directories of those repositories and write additional tests and use cases then that will be great! There are already over 100 tests but you can always write more. With more testing comes more stability. Especially as people start to contribute to the project. Check the tests that are already there and write any use cases that are missing. These tests can be things such as special characters in a url or other oddities that may not have been thought of when using TDD for that feature.
 
 ## Contribute to Tutorials
 
@@ -40,11 +40,11 @@ This documentation is fantastic but there are spots where it could be improved. 
 
 ## Report Bugs
 
-If you just don't want to contribute code to the main project you may instead simply report bugs or improvements. You can go ahead and build any of your applications as usual and report any bugs you encounter to the [GitHub.com](https://github.com/MasoniteFramework/masonite/issues) issues page.
+If you just don't want to contribute code to the main project you may instead simply report bugs or improvements. You can go ahead and build any of your applications as usual and report any bugs you encounter to the [GitHub.com](https://github.com/masonitedev/masonite/issues) issues page.
 
 ## Squash Bugs
 
-Look at the issues page on [GitHub.com](https://github.com/MasoniteFramework/masonite/issues) for any issues, bugs or enhancements that you are willing to fix. If you don't know how to work on them, just comment on the issue and Joseph Mancuso or other core contributors will be more than happy explaining step by step on how you can go about fixing or developing that issue.
+Look at the issues page on [GitHub.com](https://github.com/masonitedev/masonite/issues) for any issues, bugs or enhancements that you are willing to fix. If you don't know how to work on them, just comment on the issue and Joseph Mancuso or other core contributors will be more than happy explaining step by step on how you can go about fixing or developing that issue.
 
 ## Build a Community
 
@@ -68,4 +68,4 @@ Every now and then will be a `requires discussion` label on an issue or pull req
 
 ## Create Packages
 
-Every framework needs great packages and we as the maintainers of Masonite can only do so much with coming out with great packages and maintaining the framework at the same time. We look forward to our community coming out with awesome additions to the Masonite ecosystem. If you have any issues then be sure to open in the gitter chatroom on the Github homepage.
+Every framework needs great packages and we as the maintainers of Masonite can only do so much with coming out with great packages and maintaining the framework at the same time. We look forward to our community coming out with awesome additions to the Masonite ecosystem. If you have any issues then be sure to open an issue on the [Masonite repository](https://github.com/masonitedev/masonite/issues).

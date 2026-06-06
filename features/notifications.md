@@ -198,7 +198,7 @@ from masonite.notification.components import SlackComponent
 class Welcome(Notification):
 
     def to_slack(self, notifiable):
-        return SlackComponent().text('Masonite Notification: Read The Docs!, https://docs.masoniteproject.com/') \
+        return SlackComponent().text('Masonite Notification: Read The Docs!, https://docs.masonite.dev/') \
             .channel('#bot') \
             .as_user('Masonite Bot') \
 
@@ -230,7 +230,7 @@ Notifications can be sent to a Slack workspace in two ways in Masonite:
 
 **Incoming Webhooks**
 
-You will need to [configure an "Incoming Webhook"](https://masoniteproject.slack.com/apps/A0F7XDUAZ-incoming-webhooks) integration for your Slack workspace. This integration will provide you with a URL you may use when routing Slack notifications. This URL will target a specific Slack channel.
+You will need to [configure an "Incoming Webhook"](https://api.slack.com/messaging/webhooks) integration for your Slack workspace. This integration will provide you with a URL you may use when routing Slack notifications. This URL will target a specific Slack channel.
 
 **Web API**
 

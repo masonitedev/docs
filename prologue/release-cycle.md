@@ -1,8 +1,8 @@
 Masonite uses SEMVER versioning schema and your requirements should be fixed on any one of these requirements depending on your dependency manager:
 
 ```
-masonite>=4,<5
-masonite~=4
+masonite-framework>=5,<6
+masonite-framework~=5
 ```
 
 This will allow your application to stay up to date for all minor releases of the framework.

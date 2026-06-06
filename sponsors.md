@@ -1,10 +1,8 @@
 # Sponsors
 
-To become a sponsor head to the [GitHub Sponsors](https://github.com/sponsors/MasoniteFramework) page.
-
-## Gold Sponsors
-
-To become a gold sponsor head to the [GitHub Sponsors](https://github.com/sponsors/MasoniteFramework) page.
+{% hint style="info" %}
+Sponsorship is currently transitioning to the new `masonitedev` organization. Sponsorship links will be updated here once the new program is available.
+{% endhint %}
 
 ## Current Sponsors
 

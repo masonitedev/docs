@@ -173,7 +173,7 @@ Learn more in the [Requests documentation here](broken-reference).
 
 We built a new validation library from scratch and completely ripped out the old validation code. Any current validation code will need to be updated to the new way.
 
-The new way is MUCH better. You can read about it in the new [validation section here](https://docs.masoniteproject.com/v/v2.2/advanced/validation).
+The new way is MUCH better. You can read about it in the new [validation section here](https://docs.masonite.dev/v/v2.2/advanced/validation).
 
 {% hint style="success" %}
 Learn more in the [Validation documentation here](broken-reference).

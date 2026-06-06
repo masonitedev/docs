@@ -36,7 +36,7 @@ $ craft tinker
 ```
 
 {% hint style="success" %}
-Read more in [The Craft Command Introduction](https://github.com/MasoniteFramework/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/the-craft-command/introduction.md#tinker-command) documentation.
+Read more in [The Craft Command Introduction](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/the-craft-command/introduction.md#tinker-command) documentation.
 {% endhint %}
 
 ## Show Routes Command
@@ -48,7 +48,7 @@ $ craft show:routes
 ```
 
 {% hint style="success" %}
-Read more in [The Craft Command Introduction](https://github.com/MasoniteFramework/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/the-craft-command/introduction.md#show-routes-command) documentation.
+Read more in [The Craft Command Introduction](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/the-craft-command/introduction.md#show-routes-command) documentation.
 {% endhint %}
 
 ## Server Reloading
@@ -60,7 +60,7 @@ $ craft serve -r
 ```
 
 {% hint style="success" %}
-Read more in [The Craft Command](https://github.com/MasoniteFramework/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/the-craft-command/introduction.md#running-the-wsgi-server) Introduction documentation.
+Read more in [The Craft Command](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/the-craft-command/introduction.md#running-the-wsgi-server) Introduction documentation.
 {% endhint %}
 
 ## Autoloading
@@ -70,7 +70,7 @@ An incredible new feature is autoloading support. You can now list directories i
 You can also use this class as a standalone class in your own service providers.
 
 {% hint style="success" %}
-Read more in [Autoloading](https://github.com/MasoniteFramework/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/advanced/autoloading.md) documentation.
+Read more in [Autoloading](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/advanced/autoloading.md) documentation.
 {% endhint %}
 
 ## Updated Libraries
@@ -165,7 +165,7 @@ Read about Masonite Scheduler under the [Task Scheduling](broken-reference) docu
 It's important during development that you have the ability to seed your database with dummy data. This will improve team development with Masonite to get everyones database setup accordingly.
 
 {% hint style="success" %}
-Read more in the [Database Seeding](https://github.com/MasoniteFramework/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/advanced/database-seeding.md) documentation.
+Read more in the [Database Seeding](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/advanced/database-seeding.md) documentation.
 {% endhint %}
 
 ## Added a New Static File Helper

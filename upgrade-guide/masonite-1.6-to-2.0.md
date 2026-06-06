@@ -163,7 +163,7 @@ def show(self):
 Some variable internals have changed to prepend a double underscore to them to better symbolize they are being handled internally. Because of this we need to change any instances of csrf\_token to \_\_token in  the CSRF Middleware file.
 
 {% hint style="info" %}
-You can check for what the class should look like from the [MasoniteFramework/masonite](https://github.com/MasoniteFramework/masonite) repository
+You can check for what the class should look like from the [MasoniteFramework/masonite](https://github.com/masonitedev/masonite) repository
 {% endhint %}
 
 ## Autoloading

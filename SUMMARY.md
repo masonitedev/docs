@@ -37,6 +37,7 @@
 * [Filesystem and Uploading](features/uploading.md)
 * [Hash ID's](features/hashid.md)
 * [Helpers](features/helpers.md)
+* [Logging](features/logging.md)
 * [Mail](features/mail.md)
 * [Notifications](features/notifications.md)
 * [Package Development](features/package-development.md)
@@ -59,7 +60,7 @@
 
 ## Masonite ORM
 
-* [To Masonite ORM Docs](https://orm.masoniteproject.com)
+* [To Masonite ORM Docs](https://github.com/masonitedev/orm)
 
 ## Testing
 
@@ -96,6 +97,8 @@
 * [Masonite 2.2](whats-new/masonite-2.2.md)
 * [Masonite 2.3](whats-new/masonite-2.3.md)
 * [Masonite 3.0](whats-new/masonite-3.0.md)
+* [Masonite 4.0](whats-new/masonite-4.0.md)
+* [Masonite 5.0](whats-new/masonite-5.0.md)
 
 ## Upgrade Guide
 
@@ -108,3 +111,4 @@
 * [Masonite 2.2 to 2.3](upgrade-guide/masonite-2.2-to-2.3.md)
 * [Masonite 2.3 to 3.0](upgrade-guide/masonite-2.3-to-3.0.md)
 * [Masonite 3.0 to 4.0](upgrade-guide/masonite-3.0-to-4.0.md)
+* [Masonite 4.0 to 5.0](upgrade-guide/masonite-4.0-to-5.0.md)

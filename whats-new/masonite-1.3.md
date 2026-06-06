@@ -69,7 +69,7 @@ Specify the subdomain you want to target with your route. It's common to want to
 Get().domain('test').route('/dashboard', 'DashboardController@show')
 ```
 
-Which will target `test.example.com/dashboard` and not `example.com/dashboard`. Read more about subdomains in the [Routing](https://github.com/MasoniteFramework/docs/tree/ba9d9f8ac3e41d58b9d92d951f92c898fb16a2a4/routing.md) documentation.
+Which will target `test.example.com/dashboard` and not `example.com/dashboard`. Read more about subdomains in the [Routing](https://github.com/masonitedev/docs/tree/ba9d9f8ac3e41d58b9d92d951f92c898fb16a2a4/routing.md) documentation.
 
 ## Added new module method to Get and Post routes
 

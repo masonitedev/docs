@@ -1,3 +1,6 @@
+> **Note:** Masonite 4.x is now a legacy release. Active development continues in the [masonitedev](https://github.com/masonitedev) organization under the `masonite-framework` package (Masonite 5.x).
+> If you are on Masonite 4, see the [Masonite 4.0 to 5.0 upgrade guide](masonite-4.0-to-5.0.md) for the latest version.
+
 Masonite 4 is the biggest change in a Masonite release we have ever had. Smaller applications may benefit from creating a new app and then copying and pasting controllers, routes and views to the new installation.
 
 For medium to large scale applications, you will need to go through the codebase and upgrade everything to use the new structures we have available in Masonite 4.
@@ -21,7 +24,7 @@ $ pip install masonite==4.0.0
 
 The next step of the upgrade guide is to replace your craft file. This is a basic file in the root of your project that will be used whenever you run `python craft`. We will use this to keep testing our server:
 
-Go to [this file](https://github.com/MasoniteFramework/cookie-cutter/blob/4.0/craft) and copy and paste it into your own craft file in the root of your project. If you are running Masonite 3 then you should already have this file.
+Go to [this file](https://github.com/masonitedev/cookie-cutter/blob/4.0/craft) and copy and paste it into your own craft file in the root of your project. If you are running Masonite 3 then you should already have this file.
 
 # Kernel File
 
@@ -29,7 +32,7 @@ Masonite 4 has a new `Kernel.py` file which is used to customize your applicatio
 
 You will also need to put this into the base of your project.
 
-Go to [this file](https://github.com/MasoniteFramework/cookie-cutter/blob/4.0/Kernel.py) and paste it into your own `Kernel.py` file in the root of your project.
+Go to [this file](https://github.com/masonitedev/cookie-cutter/blob/4.0/Kernel.py) and paste it into your own `Kernel.py` file in the root of your project.
 
 Now go through this file and customize any of the locations. Masonite 4 uses a different file structure than Masonite 3. For example, Masonite 3 put all views in `resources/templates` while Masonite 4 has them just in `templates`.
 
@@ -81,7 +84,7 @@ ROUTES = [
 
 The WSGI file has also changed.
 
-Go to [this file](https://github.com/MasoniteFramework/cookie-cutter/blob/4.0/wsgi.py) and replace your own `wsgi.py` file
+Go to [this file](https://github.com/masonitedev/cookie-cutter/blob/4.0/wsgi.py) and replace your own `wsgi.py` file
 
 # Import Path Changes
 
@@ -260,7 +263,7 @@ HANDLERS = {"stack_overflow": True, "solutions": True}
 
 The `config/storage.py` file has been replaced with a `config/filesystem.py` file:
 
-Go to [this file](https://github.com/MasoniteFramework/cookie-cutter/blob/4.0/config/filesystem.py) and copy it into your project. Then move the `STATICFILES` from your storage config into this new filesystem config
+Go to [this file](https://github.com/masonitedev/cookie-cutter/blob/4.0/config/filesystem.py) and copy it into your project. Then move the `STATICFILES` from your storage config into this new filesystem config
 
 ## Session
 

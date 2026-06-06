@@ -6,19 +6,19 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 The framework has 2 main parts: The "masonite" repo and the "cookie-cutter" repo.
 
-The `MasoniteFramework/cookie-cutter` repository is the main repository that will install when creating new projects using the `project start` command. This is actually a full Masonite project. When you run `project start` it simply reaches out to this GitHub repo, fetches the zip and unzips it on your computer. Not much development will be done in this repository and won't be changed unless something requires changes in the default installation project structure.
+The `masonitedev/cookie-cutter` repository is the main repository that will install when creating new projects using the `project start` command. This is actually a full Masonite project. When you run `project start` it simply reaches out to this GitHub repo, fetches the zip and unzips it on your computer. Not much development will be done in this repository and won't be changed unless something requires changes in the default installation project structure.
 
-The `MasoniteFramework/core` repository is deprecated and development has been moved into `MasoniteFramework/masonite`. This repository contains all the development of Masonite and contains all the releases for Masonite. If you need to fix a bug or add a new feature then this is the repository to fork and make your changes from.
+The `MasoniteFramework/core` repository is deprecated and development has been moved into `masonitedev/masonite`. This repository contains all the development of Masonite and contains all the releases for Masonite. If you need to fix a bug or add a new feature then this is the repository to fork and make your changes from.
 
 The `MasoniteFramework/craft` is deprecated. This was where the craft CLI tool lived that has since been moved into the `masonite` repository.
 
 ## Getting the Masonite cookie-cutter repository up and running to be edited
 
-[You can read about how the framework flows, works and architectural concepts here](https://masoniteframework.gitbooks.io/docs/content/request-lifecycle.html)
+[You can read about how the framework flows, works and architectural concepts here](https://docs.masonite.dev/architecture/service-providers)
 
 This repo is simple and will be able to be installed following the installation instruction in the README.
 
-* Fork the `MasoniteFramework/cookie-cutter` repo.
+* Fork the `masonitedev/cookie-cutter` repo.
 * Clone that repo into your computer:
   * `git clone http://github.com/your-username/cookie-cutter.git`
 * Checkout the current release branch \(example: `develop`\)
@@ -36,7 +36,7 @@ The trick to this is that we need it to be pip installed and then quickly editab
 
 To do this just:
 
-* Fork the `MasoniteFramework/masonite` repo,
+* Fork the `masonitedev/masonite` repo,
 * Clone that repo into your computer:
   * `git clone http://github.com/your-username/masonite.git`
 * Activate your masonite virtual environment \(optional\)
@@ -134,7 +134,7 @@ perform_some_complex_task()
 
 1. You should open an issue before making any pull requests. Not all features will be added to the framework and some may be better off as a third party package or not be added at all. It wouldn't be good if you worked on a feature for several days and the pull request gets rejected for reasons that could have been discussed in an issue for several minutes.
 2. Ensure any changes are well commented and any configuration files that are added have docstring comments on the variables it's setting. See the comments section above.
-3. Update the `MasoniteFramework/docs` repo \(and the README.md inside `MasoniteFramework/masonite` repo if applicable\) with details of changes to the UI. This includes new environment variables, new file locations, container parameters, new feature explanations etc.
+3. Update the `masonitedev/docs` repo \(and the README.md inside `masonitedev/masonite` repo if applicable\) with details of changes to the UI. This includes new environment variables, new file locations, container parameters, new feature explanations etc.
 4. Name your branches in the form of `<feature|fix>/<issue-number>`. For example if you are doing a bug fix and the issue number is `576` then name your branch `fix/576`. This will help us locate the branches on our computers at later dates. If it is a new feature name it `feature/576`.
 5. You **must** add unit testing for any changes made before the PR will be merged. If you are unsure how to write unit tests of the repositories listed above, you may open the pull request anyway and we will add the tests together.
 6. Increase the version numbers in any example files (like setup.py) and to the new version that this Pull Request would represent. The versioning scheme we use is [SEMVER](https://semver.org/).
@@ -205,7 +205,7 @@ This Code of Conduct applies both within project spaces and in public spaces whe
 
 ### Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at joe@masoniteproject.com. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at contact@masonite.dev. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
 
 Project maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project's leadership.
 

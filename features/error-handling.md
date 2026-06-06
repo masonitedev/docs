@@ -6,6 +6,8 @@ All exceptions are handled by the ExceptionHandler class which is bound to the [
 
 This handler has a logic to decide how to handle exceptions depending on the exception type, the environment type, the request accepted content type and the [configured exception handlers](#adding-new-handlers).
 
+Every exception is also automatically logged with its full traceback through the [logging](/features/logging.md) system.
+
 This handler has by default one driver [Exceptionite](https://github.com/MasoniteFramework/exceptionite) which is responsible of handling errors in development by providing a lot of context to help debug your application.
 
 ## Debug Mode
