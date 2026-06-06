@@ -30,9 +30,9 @@ a boolean:
 Gate.has("create-post")
 ```
 
-{% hint style="info" %}
-If a unknown gate is used a `GateDoesNotExist` exception will be raised.
-{% endhint %}
+!!! info
+
+    If a unknown gate is used a `GateDoesNotExist` exception will be raised.
 
 ## Authorizing Actions
 
@@ -229,9 +229,9 @@ class PostPolicy(Policy):
         return user.id == instance.user_id
 ```
 
-{% hint style="info" %}
-If an unknown policy is used then a `PolicyDoesNotExist` exception will be raised.
-{% endhint %}
+!!! info
+
+    If an unknown policy is used then a `PolicyDoesNotExist` exception will be raised.
 
 ## Authorizing Actions
 

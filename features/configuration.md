@@ -70,9 +70,9 @@ However, you can override on the fly a configuration value with the `Config` fac
 Config.set("mail.from_email", "support@masoniteproject.com")
 ```
 
-{% hint style="warning" %}
-This should be done sparingly as this could have unexpected side effects depending at which time you override the configuration option.
-{% endhint %}
+!!! warning
+
+    This should be done sparingly as this could have unexpected side effects depending at which time you override the configuration option.
 
 This is mostly useful during tests, when you want to override a configuration option to test a specific behaviour:
 

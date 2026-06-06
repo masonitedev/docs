@@ -24,9 +24,9 @@ In order to use Masonite, you’ll need:
 * Latest version of OpenSSL
 * Pip3
 
-{% hint style="warning" %}
-All commands of python and pip in this documentation is assuming they are pointing to the correct Python 3 versions. For example, anywhere you see the `python` command ran it is assuming that is a Python 3.10+ Python installation. If you are having issues with any installation steps just be sure the commands are for Python 3.10+ and not 2.7 or below.
-{% endhint %}
+!!! warning
+
+    All commands of python and pip in this documentation is assuming they are pointing to the correct Python 3 versions. For example, anywhere you see the `python` command ran it is assuming that is a Python 3.10+ Python installation. If you are having issues with any installation steps just be sure the commands are for Python 3.10+ and not 2.7 or below.
 
 ### Linux
 
@@ -34,33 +34,27 @@ If you are running on a Linux flavor, you’ll need the Python dev package and t
 
 #### Debian and Ubuntu based Linux distributions
 
-{% code title="terminal" %}
-```text
+```text title="terminal"
 $ sudo apt install python3-dev python3-pip libssl-dev build-essential python3-venv
 ```
-{% endcode %}
 
 Or you may need to specify your `python3.x-dev` version:
 
-{% code title="terminal" %}
-```text
+```text title="terminal"
 $ sudo apt-get install python3.10-dev python3-pip libssl-dev build-essential python3-venv
 ```
-{% endcode %}
 
 #### Enterprise Linux based distributions \(Fedora, CentOS, RHEL, ...\)
 
-{% code title="terminal" %}
-```text
+```text title="terminal"
 # dnf install python-devel openssl-devel
 ```
-{% endcode %}
 
 ## Installation
 
-{% hint style="success" %}
-Be sure to visit the [Masonite repository](https://github.com/masonitedev/masonite) for help or guidance.
-{% endhint %}
+!!! success
+
+    Be sure to visit the [Masonite repository](https://github.com/masonitedev/masonite) for help or guidance.
 
 Masonite excels at being simple to install and get going. If you are coming from previous versions of Masonite, the order of some of the installation steps have changed a bit.
 
@@ -78,27 +72,23 @@ If you are on windows you can just create a directory and open the directory in 
 
 Although this step is technically optional, it is highly recommended. You can create a virtual environment if you don't want to install all of masonite's dependencies on your systems Python. If you use virtual environments then create your virtual environment by running:
 
-{% code title="terminal" %}
-```text
+```text title="terminal"
 $ python -m venv venv
 $ source venv/bin/activate
 ```
-{% endcode %}
 
 or if you are on Windows:
 
-{% code title="terminal" %}
-```text
+```text title="terminal"
 $ python -m venv venv
 $ ./venv/Scripts/activate
 ```
-{% endcode %}
 
-{% hint style="info" %}
-The `python` command here is utilizing Python 3. Your machine may run Python 2 \(typically 2.7\) by default for UNIX machines. You may set an alias on your machine for Python 3 or simply run `python3` anytime you see the `python` command.
+!!! info
 
-For example, you would run `python3 -m venv venv` instead of `python -m venv venv`
-{% endhint %}
+    The `python` command here is utilizing Python 3. Your machine may run Python 2 \(typically 2.7\) by default for UNIX machines. You may set an alias on your machine for Python 3 or simply run `python3` anytime you see the `python` command.
+
+    For example, you would run `python3 -m venv venv` instead of `python -m venv venv`
 
 # Installation
 
@@ -116,9 +106,9 @@ $ project start .
 
 This will create a new project in the current directory.
 
-{% hint style="info" %}
-If you want to create the project in a new directory (e.g. `my_project`) you must provide the directory name with `project start my_project`.
-{% endhint %}
+!!! info
+
+    If you want to create the project in a new directory (e.g. `my_project`) you must provide the directory name with `project start my_project`.
 
 Then install Masonite dependencies:
 
@@ -126,9 +116,9 @@ Then install Masonite dependencies:
 $ project install
 ```
 
-{% hint style="info" %}
-If you have created the project in a new directory you must go to this directory before running `project install`.
-{% endhint %}
+!!! info
+
+    If you have created the project in a new directory you must go to this directory before running `project install`.
 
 Once installed you can run the development server:
 

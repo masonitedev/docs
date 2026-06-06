@@ -216,9 +216,9 @@ You can access the session here:
 <p> Error: {{ session().get('error') }} </p>
 ```
 
-{% hint style="success" %}
-Learn more about session in the [Session](/advanced/sessions.md) documentation.
-{% endhint %}
+!!! success
+
+    Learn more about session in the [Session](/advanced/sessions.md) documentation.
 
 ## Config
 

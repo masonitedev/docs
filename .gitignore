@@ -87,4 +87,5 @@ $RECYCLE.BIN/
 *.lnk
 
 
-# End of https://www.gitignore.io/api/osx,linux,windows
+# End of https://www.gitignore.io/api/osx,linux,windowssite/
+node_modules/

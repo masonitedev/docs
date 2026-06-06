@@ -35,9 +35,9 @@ Simply run:
 $ pip install --upgrade masonite-cli
 ```
 
-{% hint style="warning" %}
-**You may have to run sudo if you are using a UNIX machine.**
-{% endhint %}
+!!! warning
+
+    **You may have to run sudo if you are using a UNIX machine.**
 
 ## Sessions
 

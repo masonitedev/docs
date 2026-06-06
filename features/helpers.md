@@ -134,15 +134,13 @@ dd(test, data)
 This will stop code at this line and renders a nice dump page where you can see all variables dumped
 until now.
 
-{% hint style="info" %}
-Note that dumps will accumulate into session. If you want to clear dumps, you can use `Dump.clear()`
-or you can enable the HTTP middleware `ClearDumpsBetweenRequestsMiddleware` to clear dumps
-between every requests.
-{% endhint %}
+!!! info
 
-{% code title="Kernel.py" %}
+    Note that dumps will accumulate into session. If you want to clear dumps, you can use `Dump.clear()`
+    or you can enable the HTTP middleware `ClearDumpsBetweenRequestsMiddleware` to clear dumps
+    between every requests.
 
-```python
+```python title="Kernel.py"
 from masonite.middleware import ClearDumpsBetweenRequestsMiddleware
 
 class Kernel:
@@ -152,5 +150,3 @@ class Kernel:
         ClearDumpsBetweenRequestsMiddleware
     ]
 ```
-
-{% endcode %}

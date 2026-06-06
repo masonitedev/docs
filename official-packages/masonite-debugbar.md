@@ -33,9 +33,9 @@ Then publish the package:
 $ python craft package:publish debugbar
 ```
 
-{% hint style="warning" %}
-Finally ensure [debug mode](../features/environments.md#debug-mode) is enabled else the debugbar will not be displayed !
-{% endhint %}
+!!! warning
+
+    Finally ensure [debug mode](../features/environments.md#debug-mode) is enabled else the debugbar will not be displayed !
 
 Now when you go to a page in your application, you will see a debug bar at the bottom of the page.
 

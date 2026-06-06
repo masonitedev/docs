@@ -32,9 +32,9 @@ def show(self, user_id, view: View):
     return view.render('some.template', {'user': user})
 ```
 
-{% hint style="success" %}
-Learn more in the [Controllers documentation here](broken-reference).
-{% endhint %}
+!!! success
+
+    Learn more in the [Controllers documentation here](broken-reference).
 
 ## Added a storage manager and disk storage drivers
 
@@ -44,9 +44,9 @@ This is used as a wrapper around I/O operations. It will also be a wrapper aroun
 
 We can now specify directly in the configuration file whether or not the threading or multiprocessing for the async type operations.
 
-{% hint style="success" %}
-Learn more in the [Queues documentation here](broken-reference).
-{% endhint %}
+!!! success
+
+    Learn more in the [Queues documentation here](broken-reference).
 
 ## Added new HTTP Verbs
 
@@ -60,9 +60,9 @@ ROUTES = [
 ]
 ```
 
-{% hint style="success" %}
-Learn more in the [Routes documentation here](../features/routing.md#http-verbs).
-{% endhint %}
+!!! success
+
+    Learn more in the [Routes documentation here](../features/routing.md#http-verbs).
 
 ## JSON error responses
 
@@ -108,9 +108,9 @@ $ craft serve -d
 $ craft serve --dont-reload
 ```
 
-{% hint style="success" %}
-Learn more in the [Craft commands documentation here](broken-reference).
-{% endhint %}
+!!! success
+
+    Learn more in the [Craft commands documentation here](broken-reference).
 
 ## Added Accept('\*') to drivers
 
@@ -121,23 +121,23 @@ def show(self, upload: Upload):
     upload.accept('*').store(request.input('file'))
 ```
 
-{% hint style="success" %}
-Learn more in the [Uploading documentation here](broken-reference).
-{% endhint %}
+!!! success
+
+    Learn more in the [Uploading documentation here](broken-reference).
 
 ## Added much more view helpers
 
-{% hint style="success" %}
-Learn more in the [Views documentation here](broken-reference).
-{% endhint %}
+!!! success
+
+    Learn more in the [Views documentation here](broken-reference).
 
 ## All Tests are now unittests
 
 We moved from pytest to unittests for test structures.
 
-{% hint style="success" %}
-Learn more in the [Testing documentation here](broken-reference).
-{% endhint %}
+!!! success
+
+    Learn more in the [Testing documentation here](broken-reference).
 
 ## Added a better way to run database tests
 
@@ -165,9 +165,9 @@ We can now do:
 
 In order to learn how to use this you can visit the [documentation here](broken-reference).
 
-{% hint style="success" %}
-Learn more in the [Requests documentation here](broken-reference).
-{% endhint %}
+!!! success
+
+    Learn more in the [Requests documentation here](broken-reference).
 
 ## Added a completely new validation library
 
@@ -175,9 +175,9 @@ We built a new validation library from scratch and completely ripped out the old
 
 The new way is MUCH better. You can read about it in the new [validation section here](https://docs.masonite.dev/v/v2.2/advanced/validation).
 
-{% hint style="success" %}
-Learn more in the [Validation documentation here](broken-reference).
-{% endhint %}
+!!! success
+
+    Learn more in the [Validation documentation here](broken-reference).
 
 ## Auth class does not need the request class.
 
@@ -240,9 +240,9 @@ def show(self, auth: Auth):
     })
 ```
 
-{% hint style="success" %}
-Learn more in the [Authentication documentation here](broken-reference).
-{% endhint %}
+!!! success
+
+    Learn more in the [Authentication documentation here](broken-reference).
 
 ## Changed all regex compiling to be done before the server starts
 
@@ -256,9 +256,9 @@ Masonite now has the ability to remember the previous container bindings for eac
 
 This is scheduled to be set by default in the next major version of Masonite
 
-{% hint style="success" %}
-Learn more in the [Service Container documentation here](broken-reference).
-{% endhint %}
+!!! success
+
+    Learn more in the [Service Container documentation here](broken-reference).
 
 ## Added a new `with_errors()` method in order to cut down on setting an errors session.
 
@@ -293,6 +293,6 @@ def show(self, request: Request, validate: Validator):
       return request.back().with_errors(errors)
 ```
 
-{% hint style="success" %}
-Learn more in the [Requests documentation here](broken-reference).
-{% endhint %}
+!!! success
+
+    Learn more in the [Requests documentation here](broken-reference).

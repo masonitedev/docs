@@ -99,9 +99,9 @@ $ python craft serve
 
 You can then visit `http://localhost:8000` to see the welcome page.
 
-{% hint style="info" %}
-When you make changes to your package as your package is installed locally and registered into your project, your changes will be directly available in the project. You will just need to refresh your pages to see changes.
-{% endhint %}
+!!! info
+
+    When you make changes to your package as your package is installed locally and registered into your project, your changes will be directly available in the project. You will just need to refresh your pages to see changes.
 
 ### Migrating the test project
 
@@ -158,9 +158,9 @@ $ make publish
 
 This will install `twine` if not installed yet, build the package, upload it to PyPi and delete the build artifacts. You should then see a success message and be able to browse your package on [PyPi](https://pypi.org/).
 
-{% hint style="warning" %}
-You should always check that the package name is available on PyPi and that the version number to publish has not been published before. Else you won't be able to publish your package.
-{% endhint %}
+!!! warning
+
+    You should always check that the package name is available on PyPi and that the version number to publish has not been published before. Else you won't be able to publish your package.
 
 #### Make the package available on masonite packages list
 
@@ -246,9 +246,9 @@ def configure(self):
 
 The [package publish](#publishing-resources) command will publish the configuration into the defined project configuration folder. With the default project settings it would be in `config/super_awesome.py`.
 
-{% hint style="info" %}
-Configuration values located in packages and in local project will be merged. Values defined locally in the project takes precedance over the default values of the package.
-{% endhint %}
+!!! info
+
+    Configuration values located in packages and in local project will be merged. Values defined locally in the project takes precedance over the default values of the package.
 
 ### Migrations
 

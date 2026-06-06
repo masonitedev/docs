@@ -4,9 +4,9 @@ Masonite 2 brings an incredible new release to the Masonite family. This release
 
 Upgrading from Masonite 1.6 to Masonite 2.0 shouldn't take very long. On an average sized project, this upgrade should take around 30 minutes. We'll walk you through the changes you have to make to your current project and explain the reasoning behind it.
 
-{% hint style="success" %}
-Checkout the [Upgrade Guide for Masonite 1.6 to 2.0](../upgrade-guide/masonite-1.6-to-2.0.md)
-{% endhint %}
+!!! success
+
+    Checkout the [Upgrade Guide for Masonite 1.6 to 2.0](../upgrade-guide/masonite-1.6-to-2.0.md)
 
 ## Controller Constructors
 
@@ -23,9 +23,9 @@ class YourController:
         print(self.request) # <class masonite.request.Request>
 ```
 
-{% hint style="success" %}
-Read more in the [Controllers](broken-reference) documentation.
-{% endhint %}
+!!! success
+
+    Read more in the [Controllers](broken-reference) documentation.
 
 ## Tinker Command
 
@@ -35,9 +35,9 @@ There is a new command that starts a Python shell and imports the container for 
 $ craft tinker
 ```
 
-{% hint style="success" %}
-Read more in [The Craft Command Introduction](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/the-craft-command/introduction.md#tinker-command) documentation.
-{% endhint %}
+!!! success
+
+    Read more in [The Craft Command Introduction](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/the-craft-command/introduction.md#tinker-command) documentation.
 
 ## Show Routes Command
 
@@ -47,9 +47,9 @@ Masonite 2 ships with an awesome little helper command that allows you to see al
 $ craft show:routes
 ```
 
-{% hint style="success" %}
-Read more in [The Craft Command Introduction](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/the-craft-command/introduction.md#show-routes-command) documentation.
-{% endhint %}
+!!! success
+
+    Read more in [The Craft Command Introduction](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/the-craft-command/introduction.md#show-routes-command) documentation.
 
 ## Server Reloading
 
@@ -59,9 +59,9 @@ A huge update to Masonite is the new `--reload` flag on the serve command. Now t
 $ craft serve -r
 ```
 
-{% hint style="success" %}
-Read more in [The Craft Command](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/the-craft-command/introduction.md#running-the-wsgi-server) Introduction documentation.
-{% endhint %}
+!!! success
+
+    Read more in [The Craft Command](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/the-craft-command/introduction.md#running-the-wsgi-server) Introduction documentation.
 
 ## Autoloading
 
@@ -69,9 +69,9 @@ An incredible new feature is autoloading support. You can now list directories i
 
 You can also use this class as a standalone class in your own service providers.
 
-{% hint style="success" %}
-Read more in [Autoloading](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/advanced/autoloading.md) documentation.
-{% endhint %}
+!!! success
+
+    Read more in [Autoloading](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/advanced/autoloading.md) documentation.
 
 ## Updated Libraries
 
@@ -93,9 +93,9 @@ from masonite.drivers import UploadDriver
 
 Because of this change we no longer need the same duplicated class names in the PROVIDERS list either.
 
-{% hint style="success" %}
-Read more about changing duplicated class names under the [Duplicate Class Names](../upgrade-guide/masonite-1.6-to-2.0.md#duplicate-class-names) documentation.
-{% endhint %}
+!!! success
+
+    Read more about changing duplicated class names under the [Duplicate Class Names](../upgrade-guide/masonite-1.6-to-2.0.md#duplicate-class-names) documentation.
 
 ## Redirection Provider
 
@@ -112,25 +112,25 @@ def show(self):
     return request().redirect('/dashboard/@id', {'id': '5'})
 ```
 
-{% hint style="success" %}
-Read more in the [Requests](broken-reference) documentation.
-{% endhint %}
+!!! success
+
+    Read more in the [Requests](broken-reference) documentation.
 
 ## Request Only
 
 Added a new Request.only method to fetch only specific inputs needed.
 
-{% hint style="success" %}
-Read more in [Requests](broken-reference) documentation.
-{% endhint %}
+!!! success
+
+    Read more in [Requests](broken-reference) documentation.
 
 ## Get Request Method
 
 Added a new `Request.get_request_method()` method to the `Request` class.
 
-{% hint style="success" %}
-Read more in [Requests](broken-reference) documentation.
-{% endhint %}
+!!! success
+
+    Read more in [Requests](broken-reference) documentation.
 
 ## New Argument in Request.all
 
@@ -140,41 +140,41 @@ You can now completely remove fetching of any inputs that Masonite handles inter
 Request.all(internal_variables=False)
 ```
 
-{% hint style="success" %}
-Read more in [Requests](broken-reference) documentation.
-{% endhint %}
+!!! success
+
+    Read more in [Requests](broken-reference) documentation.
 
 ## Made several changes to the CSRF Middleware
 
 Because of the changes to internal framework variables, there are several changes to the CSRF middleware that comes in every application of Masonite.
 
-{% hint style="success" %}
-Be sure to read the changes in the [Upgrade Guide 1.6 to 2.0](../upgrade-guide/masonite-1.6-to-2.0.md).
-{% endhint %}
+!!! success
+
+    Be sure to read the changes in the [Upgrade Guide 1.6 to 2.0](../upgrade-guide/masonite-1.6-to-2.0.md).
 
 ## Added Scheduler to Masonite
 
 Added a new default package to Masonite that allows scheduling recurring tasks:
 
-{% hint style="success" %}
-Read about Masonite Scheduler under the [Task Scheduling](broken-reference) documentation.
-{% endhint %}
+!!! success
+
+    Read about Masonite Scheduler under the [Task Scheduling](broken-reference) documentation.
 
 ## Added Database Seeding Support
 
 It's important during development that you have the ability to seed your database with dummy data. This will improve team development with Masonite to get everyones database setup accordingly.
 
-{% hint style="success" %}
-Read more in the [Database Seeding](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/advanced/database-seeding.md) documentation.
-{% endhint %}
+!!! success
+
+    Read more in the [Database Seeding](https://github.com/masonitedev/docs/tree/cc200f671eabd39fe944c0b69c10e8b65f6b80f8/advanced/database-seeding.md) documentation.
 
 ## Added a New Static File Helper
 
 Now all templates have a new static function in them to improve rendering of static assets
 
-{% hint style="success" %}
-Read more in the [Static Files](broken-reference) documentation.
-{% endhint %}
+!!! success
+
+    Read more in the [Static Files](broken-reference) documentation.
 
 ## Added a New Password Helper
 
@@ -186,9 +186,9 @@ from masonite.helpers import password
 password('secret') # returns bcrypt password
 ```
 
-{% hint style="success" %}
-Read more in the [Encryption](broken-reference) documentation.
-{% endhint %}
+!!! success
+
+    Read more in the [Encryption](broken-reference) documentation.
 
 ## Added Dot Notation To Upload Drivers And Dictionary Support To Driver Locations.
 
@@ -210,17 +210,17 @@ DRIVERS = {
 }
 ```
 
-{% hint style="success" %}
-Read more in the [Uploading](broken-reference) documentation.
-{% endhint %}
+!!! success
+
+    Read more in the [Uploading](broken-reference) documentation.
 
 ## Added Status Code Provider
 
 Masonite 2 removes the bland error codes such as 404 and 500 errors and replaces them with a cleaner view. This also allows you to add custom error pages.
 
-{% hint style="success" %}
-Read more in the [Status Codes](broken-reference) documentation.
-{% endhint %}
+!!! success
+
+    Read more in the [Status Codes](broken-reference) documentation.
 
 ## Added Explicitly Imported Providers
 

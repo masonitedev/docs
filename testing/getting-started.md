@@ -112,11 +112,11 @@ Cleaning up individual unit test
 Cleaning up test class
 ```
 
-{% hint style="warning" %}
-Note that tests methods are not always ran in the order specified in the class. Anyway you should
-not make the assumptions that tests will be run in a given order. You should try to make your
-tests idempotent.
-{% endhint %}
+!!! warning
+
+    Note that tests methods are not always ran in the order specified in the class. Anyway you should
+    not make the assumptions that tests will be run in a given order. You should try to make your
+    tests idempotent.
 
 ## Chaining Assertions
 
@@ -227,9 +227,9 @@ Disable exceptions handling during testing.
 self.withoutExceptionsHandling()
 ```
 
-{% hint style="warning" %}
-Note that exception handling is disabled by default during testing.
-{% endhint %}
+!!! warning
+
+    Note that exception handling is disabled by default during testing.
 
 ## withCsrf
 
@@ -247,9 +247,9 @@ Disable CSRF protection during testing.
 self.withoutCsrf()
 ```
 
-{% hint style="warning" %}
-Note that CSRF protection is disabled by default during testing.
-{% endhint %}
+!!! warning
+
+    Note that CSRF protection is disabled by default during testing.
 
 ## withCookies
 
@@ -280,9 +280,9 @@ self.fakeTime(given_date)
 self.assertEqual(pendulum.now(), given_date)
 ```
 
-{% hint style="warning" %}
-When using those helpers you should not forget to reset the default `pendulum` behaviour with `restoreTime()` helper to avoid breaking other tests. It can be done directly in the test or in a `tearDown()` method.
-{% endhint %}
+!!! warning
+
+    When using those helpers you should not forget to reset the default `pendulum` behaviour with `restoreTime()` helper to avoid breaking other tests. It can be done directly in the test or in a `tearDown()` method.
 
 ## fakeTimeTomorrow
 

@@ -8,9 +8,9 @@ Error here is the standard error often named `stderr`.
 
 External packages, prints in your code can output content in console (as output or error).
 
-{% hint style="warning" %}
-If you want to assert content output by a Masonite command you should use [Commands Tests](/testing/commands-tests.md#available-assertions) assertions instead.
-{% endhint %}
+!!! warning
+
+    If you want to assert content output by a Masonite command you should use [Commands Tests](/testing/commands-tests.md#available-assertions) assertions instead.
 
 
 ### Available Assertions

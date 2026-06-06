@@ -4,9 +4,9 @@ The Service Container is an extremely powerful feature of Masonite and should be
 
 The Service Container is just a dictionary where classes are loaded into it by key-value pairs, and then can be retrieved by either the key or value through resolving objects. That's it.
 
-{% hint style="info" %}
-Think of "resolving objects" as Masonite saying "what does your object need? Ok, I have them in this dictionary, let me get them for you."
-{% endhint %}
+!!! info
+
+    Think of "resolving objects" as Masonite saying "what does your object need? Ok, I have them in this dictionary, let me get them for you."
 
 The container holds all of the frameworks classes and features so adding features to Masonite only entails adding classes into the container to be used by the developer later on. This typically means "registering" these classes into the container \(more about this later on\).
 
@@ -221,9 +221,9 @@ def show(self, request: Request):
     request.app.resolve(randomFunction) # Will print the View object
 ```
 
-{% hint style="warning" %}
-Remember not to call it and only reference the function. The Service Container needs to inject dependencies into the object so it requires a reference and not a callable.
-{% endhint %}
+!!! warning
+
+    Remember not to call it and only reference the function. The Service Container needs to inject dependencies into the object so it requires a reference and not a callable.
 
 This will fetch all of the parameters of `randomFunction` and retrieve them from the service container. There probably won't be many times you'll have to resolve your own code but the option is there.
 

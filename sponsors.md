@@ -1,8 +1,8 @@
 # Sponsors
 
-{% hint style="info" %}
-Sponsorship is currently transitioning to the new `masonitedev` organization. Sponsorship links will be updated here once the new program is available.
-{% endhint %}
+!!! info
+
+    Sponsorship is currently transitioning to the new `masonitedev` organization. Sponsorship links will be updated here once the new program is available.
 
 ## Current Sponsors
 

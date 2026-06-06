@@ -16,10 +16,10 @@ When [Debug mode](/features/environments.md#debug-mode) is enabled all exception
 
 When disabled, the default `errors/500.html`, `errors/404.html`, `errors/403.html` error pages are rendered depending on error type.
 
-{% hint style="warning" %}
-Never deploy an application in production with debug mode enabled ! This could lead to expose some
-sensitive configuration data and environment variables to the end user.
-{% endhint %}
+!!! warning
+
+    Never deploy an application in production with debug mode enabled ! This could lead to expose some
+    sensitive configuration data and environment variables to the end user.
 
 ## Lifecycle
 
@@ -185,9 +185,9 @@ self.application.bind(
 )
 ```
 
-{% hint style="info" %}
-You can add this binding in your AppProvider or in `Kernel.py`.
-{% endhint %}
+!!! info
+
+    You can add this binding in your AppProvider or in `Kernel.py`.
 
 Now when your application throws a `ZeroDivisionError`, Masonite will use your handler rather than Masonite's own exception handlers.
 

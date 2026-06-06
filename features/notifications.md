@@ -36,9 +36,9 @@ class Welcome(Notification, Mailable):
 
 Each notification class has a `via` method that specify on which channels the notification will be delivered. Notifications may be sent on the `mail`, `database`, `broadcast`, `slack` and `vonage` channels. More details on this later. When sending the notification it will be automatically sent to each channel.
 
-{% hint style="info" %}
-If you would like to use an other delivery channel, feel free to check if a community driver has been developed for it or [create your own driver and share it with the community](notifications.md) !
-{% endhint %}
+!!! info
+
+    If you would like to use an other delivery channel, feel free to check if a community driver has been developed for it or [create your own driver and share it with the community](notifications.md) !
 
 `via` method should returns a list of the channels you want your notification to be delivered on. This method receives a `notifiable` instance.
 
@@ -72,9 +72,9 @@ If the notification needs to be delivered to multiple channels you can chain the
 notification.route('mail', 'sam@masonite.com').route('slack', '#general').send(Welcome())
 ```
 
-{% hint style="warning" %}
-`database` channel cannot be used with those notifications because no Notifiable entity is attached to it.
-{% endhint %}
+!!! warning
+
+    `database` channel cannot be used with those notifications because no Notifiable entity is attached to it.
 
 ### To notifiables
 
@@ -236,9 +236,9 @@ You will need to [configure an "Incoming Webhook"](https://api.slack.com/messagi
 
 You will need to [generate a token](https://api.slack.com/web#slack-web-api\_\_authentication) to interact with your Slack workspace.
 
-{% hint style="info" %}
-This token should have at minimum the `channels:read`, `chat:write:bot`, `chat:write:user` and `files:write:user` permission scopes. If your token does not have these scopes then parts of this feature will not work.
-{% endhint %}
+!!! info
+
+    This token should have at minimum the `channels:read`, `chat:write:bot`, `chat:write:user` and `files:write:user` permission scopes. If your token does not have these scopes then parts of this feature will not work.
 
 Then you can define this token globally in `config/notifications.py` file as `SLACK_TOKEN` environment variable. Or you can configure different tokens (with eventually different scopes) per notifications.
 
@@ -268,9 +268,9 @@ class Welcome(Notification):
 
 You can find all blocks name and options in [`slackblocks` documentation](https://github.com/nicklambourne/slackblocks#usage) and more information in [Slack blocks list](https://api.slack.com/reference/block-kit/blocks).
 
-{% hint style="warning" %}
-Some blocks or elements might not be yet available in `slackblocks`, but most of them should be there.
-{% endhint %}
+!!! warning
+
+    Some blocks or elements might not be yet available in `slackblocks`, but most of them should be there.
 
 #### Routing to notifiable
 
@@ -313,9 +313,9 @@ notification.route("slack", "#general").notify(Welcome())
 
 The second parameter can be a `channel name`, a `channel ID`or a `webhook URL`.
 
-{% hint style="warning" %}
-When specifying channel names you must keep `#` in the name as in the example. Based on this name a reverse lookup will be made to find the corresponding Slack channel ID. If you want to avoid this extra call, you can get the channel ID in your Slack workspace (right click on a Slack channel > Copy Name > the ID is at the end of url)
-{% endhint %}
+!!! warning
+
+    When specifying channel names you must keep `#` in the name as in the example. Based on this name a reverse lookup will be made to find the corresponding Slack channel ID. If you want to avoid this extra call, you can get the channel ID in your Slack workspace (right click on a Slack channel > Copy Name > the ID is at the end of url)
 
 ### SMS
 
@@ -456,9 +456,9 @@ for notification in user.unread_notifications.all():
     notification.mark_as_read()
 ```
 
-{% hint style="info" %}
-Finally, keep in mind that database notifications can be used as any `Masonite ORM` models, meaning you can for example make more complex queries to fetch notifications, directly on the model.
-{% endhint %}
+!!! info
+
+    Finally, keep in mind that database notifications can be used as any `Masonite ORM` models, meaning you can for example make more complex queries to fetch notifications, directly on the model.
 
 ```python
 from masonite.notification import DatabaseNotification

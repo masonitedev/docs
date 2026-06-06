@@ -163,7 +163,7 @@ Route.add_controller_locations("app/http/controllers", "other_module/controllers
 
 The best place to do this is in your `Kernel.py` file in the `register_routes()` method.
 
-{% hint style="warning" %}
-You should do it before registering routes, else registering routes will fail as Masonite will fail
-to resolve controller classes.
-{% endhint %}
+!!! warning
+
+    You should do it before registering routes, else registering routes will fail as Masonite will fail
+    to resolve controller classes.

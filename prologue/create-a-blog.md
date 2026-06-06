@@ -6,13 +6,13 @@ Since this section of the documentation is designed to just get you up and codin
 
 You will see various hint blocks throughout the tutorials. Below are examples of what the various colors represent.
 
-{% hint style="success" %}
-You'll see hint blocks that are green which you should follow if you want to learn more information about the topic currently being discussed.
-{% endhint %}
+!!! success
 
-{% hint style="info" %}
-You'll also see hint blocks that are blue. These should not be ignored and typically contain background information you need to further understand something.
-{% endhint %}
+    You'll see hint blocks that are green which you should follow if you want to learn more information about the topic currently being discussed.
+
+!!! info
+
+    You'll also see hint blocks that are blue. These should not be ignored and typically contain background information you need to further understand something.
 
 ## Installation
 
@@ -28,24 +28,22 @@ Typically your first starting point for your Masonite development flow will be t
 
 For example, to create a `GET` request route it will look like:
 
-{% tabs %}
-{% tab title="routes/web.py" %}
-```python
-from masonite.routes import Route
+=== "routes/web.py"
 
-ROUTES = [
-    Route.get('/url', 'Controller@method')
-]
+    ```python
+    from masonite.routes import Route
 
-```
-{% endtab %}
-{% endtabs %}
+    ROUTES = [
+        Route.get('/url', 'Controller@method')
+    ]
+
+    ```
 
 We'll talk more about the controller in a little bit.
 
-{% hint style="success" %}
-You can read more about routes in the [Routing](/the-basics/routing.md) documentation
-{% endhint %}
+!!! success
+
+    You can read more about routes in the [Routing](/the-basics/routing.md) documentation
 
 ### Creating our Route:
 
@@ -53,24 +51,22 @@ We will start off by creating a view and controller to create a blog post.
 
 A controller is a simply a class that inherits from Masonite's Controller class and contains controller methods. These controller methods will be what our routes will call so they will contain most of our application's business logic.
 
-{% hint style="info" %}
-Think of a controller method as a function in the `views.py` file if you are coming from the Django framework
-{% endhint %}
+!!! info
+
+    Think of a controller method as a function in the `views.py` file if you are coming from the Django framework
 
 Let's create our first route now. We can put all routes inside `routes/web.py` and inside the `ROUTES` list. You'll see we have a route for the home page. Let's add a route for creating blogs.
 
-{% tabs %}
-{% tab title="routes/web.py" %}
-```python
-ROUTES = [
-    Route.get('/', 'WelcomeController@show').name('welcome'),
+=== "routes/web.py"
 
-    # Blog Routes
-    Route.get('/blog', 'BlogController@show')
-]
-```
-{% endtab %}
-{% endtabs %}
+    ```python
+    ROUTES = [
+        Route.get('/', 'WelcomeController@show').name('welcome'),
+
+        # Blog Routes
+        Route.get('/blog', 'BlogController@show')
+    ]
+    ```
 
 You'll notice here we have a `BlogController@show` string. This means "use the blog controller's show method to render this route". The only problem here is that we don't yet have a blog controller.
 
@@ -84,29 +80,25 @@ You can of course move controllers around wherever you like them but the craft c
 
 Like most parts of Masonite, you can scaffold a controller with a craft command:
 
-{% tabs %}
-{% tab title="terminal" %}
-```text
-$ python craft controller Blog
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
+
+    ```text
+    $ python craft controller Blog
+    ```
 
 This will create a controller in `app/controllers` directory that looks like this:
 
-{% tabs %}
-{% tab title="app/http/controller/BlogController.py" %}
-```python
-from masonite.controllers import Controller
-from masonite.views import View
+=== "app/http/controller/BlogController.py"
+
+    ```python
+    from masonite.controllers import Controller
+    from masonite.views import View
 
 
-class BlogController(Controller):
-    def show(self, view: View):
-        return view.render("")
-```
-{% endtab %}
-{% endtabs %}
+    class BlogController(Controller):
+        def show(self, view: View):
+            return view.render("")
+    ```
 
 Simple enough, right? You'll notice we have a `show` method we were looking for. These are called "controller methods" and are similiar to what Django calls a "view."
 
@@ -120,16 +112,14 @@ This is important as this is our first introduction to Masonite's IOC container.
 
 For now on we won't focus on the whole controller but just the sections we are worried about. A `...` means there is code in between that we are not worried about:
 
-{% tabs %}
-{% tab title="app/controllers/BlogController.py" %}
-```python
-from masonite.view import View
-# ...
-def show(self, view: View):
-    return view.render('blog')
-```
-{% endtab %}
-{% endtabs %}
+=== "app/controllers/BlogController.py"
+
+    ```python
+    from masonite.view import View
+    # ...
+    def show(self, view: View):
+        return view.render('blog')
+    ```
 
 Notice here we "type hinted" the `View` class. This is what Masonite calls "Auto resolving dependency injection". If this doesn't make sense to you right now don't worry. The more you read on the more you will understand.
 
@@ -141,35 +131,28 @@ All views are in the `templates` directory. We can create a new file called `tem
 
 We can put some text in this file like:
 
-{% tabs %}
-{% tab title="templates/blog.html" %}
+=== "templates/blog.html"
 
-```html
-This is a blog
-```
-{% endtab %}
-{% endtabs %}
+    ```html
+    This is a blog
+    ```
 
 Let's run the migration for the first time:
 
-{% tabs %}
-{% tab title="terminal" %}
-```text
-$ python craft migrate
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
+
+    ```text
+    $ python craft migrate
+    ```
 
 
 and then run the server
 
-{% tabs %}
-{% tab title="terminal" %}
-```text
-$ python craft serve
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
+
+    ```text
+    $ python craft serve
+    ```
 
 and open up `http://localhost:8000/blog`. You will see "This is a blog" in your web browser.
 
@@ -179,13 +162,11 @@ Most applications will require some form of authentication. Masonite comes with 
 
 For our blog, we will need to setup some form of registration so we can get new users to start posting to our blog. We can create an authentication system by running the craft command:
 
-{% tabs %}
-{% tab title="terminal" %}
-```text
-$ python craft auth
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
+
+    ```text
+    $ python craft auth
+    ```
 
 We should get a success message saying that some new assets were created. You can check your controllers folder and you should see a few new controllers there that should handle registrations.
 
@@ -212,43 +193,34 @@ In order to register these users, we will need a database. By default, Masonite 
 
 We have already run the migration command before, which was:
 
-{% tabs %}
-{% tab title="terminal" %}
-```text
-$ python craft migrate
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
+
+    ```text
+    $ python craft migrate
+    ```
 
 If you want to use MySQL, open up the `.env` file in the root of your project and change the `DB_DATABASE` to `mysql`. Also, feel free to change the `DB_DATABASE` name to something else.
 
-{% tabs %}
-{% tab title="terminal" %}
+=== ".env"
 
-{% tabs %}
-{% tab title=".env" %}
-```text
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=masonite
-DB_USERNAME=root
-DB_PASSWORD=
-```
-{% endtab %}
-{% endtabs %}
+    ```text
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=masonite
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
 
 ### Migrating
 
 Once you have set the correct credentials, we can go ahead and migrate the database. Out of the box, Masonite has a migration for a users table which will be the foundation of our user. You can edit this user migration before migrating but the default configuration will suit most needs just fine and you can always add or remove columns at a later date.
 
-{% tabs %}
-{% tab title="terminal" %}
-```text
-$ python craft migrate
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
+
+    ```text
+    $ python craft migrate
+    ```
 
 This will create our users table for us along with a migrations table to keep track of any migrations we add later.
 
@@ -258,13 +230,11 @@ Now that we have the authentication and the migrations all migrated in, let's cr
 
 Go ahead and run the server:
 
-{% tabs %}
-{% tab title="terminal" %}
-```text
-$ python craft serve
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
+
+    ```text
+    $ python craft serve
+    ```
 
 and head over to [http://localhost:8000/register](http://localhost:8000/register) and fill out the form. You can use whatever name and email you like but for this purpose we will use:
 
@@ -286,67 +256,59 @@ Our posts table should have a few obvious columns that we will simplify for this
 
 Not surprisingly, we have a command to create migrations. You can read more about [Database Migrations here](https://orm.masoniteproject.com/schema-and-migrations) but we'll simplify it down to the command and explain a little bit of what's going on:
 
-{% tabs %}
-{% tab title="terminal" %}
-```text
-$ python craft migration create_posts_table --create posts
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
+
+    ```text
+    $ python craft migration create_posts_table --create posts
+    ```
 
 This command simply creates the start of a migration file that we will use to create the posts table. By convention, table names should be plural \(and model names should be singular but more on this later\).
 
 This will create a migration in the `databases/migrations` folder. Let's open that up and starting on line 6 we should see something that looks like:
 
-{% tabs %}
-{% tab title="databases/migrations/20YY\_MM\_DD\_ABCDEF\_create\_posts\_table.py" %}
-```python
-def up(self):
-    """
-    Run the migrations.
-    """
-    with self.schema.create('posts') as table:
-        table.increments('id')
-        table.timestamps()
-```
-{% endtab %}
-{% endtabs %}
+=== "databases/migrations/20YY\_MM\_DD\_ABCDEF\_create\_posts\_table.py"
+
+    ```python
+    def up(self):
+        """
+        Run the migrations.
+        """
+        with self.schema.create('posts') as table:
+            table.increments('id')
+            table.timestamps()
+    ```
 
 Lets add a title, an author, and a body to our posts tables.
 
-{% tabs %}
-{% tab title="databases/migrations/2018\_01\_09\_043202\_create\_posts\_table.py" %}
-```python
-def up(self):
-    """
-    Run the migrations.
-    """
-    with self.schema.create('posts') as table:
-        table.increments('id')
-        table.string('title')
+=== "databases/migrations/2018\_01\_09\_043202\_create\_posts\_table.py"
 
-        table.integer('author_id').unsigned()
-        table.foreign('author_id').references('id').on('users')
+    ```python
+    def up(self):
+        """
+        Run the migrations.
+        """
+        with self.schema.create('posts') as table:
+            table.increments('id')
+            table.string('title')
 
-        table.string('body')
-        table.timestamps()
-```
-{% endtab %}
-{% endtabs %}
+            table.integer('author_id').unsigned()
+            table.foreign('author_id').references('id').on('users')
 
-{% hint style="success" %}
-This should be fairly straight forward but if you want to learn more, be sure to read the [Database Migrations](https://orm.masoniteproject.com/schema-and-migrations) documentation.
-{% endhint %}
+            table.string('body')
+            table.timestamps()
+    ```
+
+!!! success
+
+    This should be fairly straight forward but if you want to learn more, be sure to read the [Database Migrations](https://orm.masoniteproject.com/schema-and-migrations) documentation.
 
 Now we can migrate this migration to create the posts table
 
-{% tabs %}
-{% tab title="terminal" %}
-```text
-$ python craft migrate
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
+
+    ```text
+    $ python craft migrate
+    ```
 
 ## Models
 
@@ -358,29 +320,25 @@ Models in Masonite are a bit different than other Python frameworks. Masonite us
 
 Again, we can use a craft command to create our model:
 
-{% tabs %}
-{% tab title="terminal" %}
-```text
-$ python craft model Post
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
+
+    ```text
+    $ python craft model Post
+    ```
 
 Notice we used the singular form for our model. By default, Masonite ORM will check for the plural name of the class in our database \(in this case posts\) by assuming the name of the table is the plural word of the model name. We will talk about how to specify the table explicitly in a bit.
 
 The model created now resides inside `app/models/Post.py` and when we open it up it should look like:
 
-{% tabs %}
-{% tab title="app/models/Post.py" %}
-```python
-"""Post Model."""
-from masoniteorm.models import Model
+=== "app/models/Post.py"
 
-class Post(Model):
-    pass
-```
-{% endtab %}
-{% endtabs %}
+    ```python
+    """Post Model."""
+    from masoniteorm.models import Model
+
+    class Post(Model):
+        pass
+    ```
 
 Simple enough, right? Like previously stated, we don't have to manipulate the model. The model will take shape of the table as we create or change migrations.
 
@@ -388,61 +346,55 @@ Simple enough, right? Like previously stated, we don't have to manipulate the mo
 
 Again, the table name that the model is attached to is the plural version of the model name but if you called your table something different such as "user_posts" instead of "posts" we can specify the table name explicitly:
 
-{% tabs %}
-{% tab title="app/Post.py" %}
-```python
-"""Post Model."""
-from masoniteorm.models import Model
+=== "app/Post.py"
 
-class Post(Model):
-    __table__ = 'user_posts'
-```
-{% endtab %}
-{% endtabs %}
+    ```python
+    """Post Model."""
+    from masoniteorm.models import Model
+
+    class Post(Model):
+        __table__ = 'user_posts'
+    ```
 
 ### Mass Assignment
 
 Masonite ORM by default protects against mass assignment as a security measure so we will explicitly need to set what columns we would like to be fillable (this way we can pass the column names into the `create` and `update` methods later).
 
-{% tabs %}
-{% tab title="app/Post.py" %}
-```python
-"""A Post Database Model."""
-from masoniteorm.models import Model
+=== "app/Post.py"
 
-class Post(Model):
-    __fillable__ = ['title', 'author_id', 'body']
-```
-{% endtab %}
-{% endtabs %}
+    ```python
+    """A Post Database Model."""
+    from masoniteorm.models import Model
+
+    class Post(Model):
+        __fillable__ = ['title', 'author_id', 'body']
+    ```
 
 ### Relationships
 
 The relationship is pretty straight forward here. Remember that we created a foreign key in our migration. We can create that relationship in our model like so:
 
-{% tabs %}
-{% tab title="app/models/Post.py" %}
-```python
-"""Post Model."""
-from masoniteorm.models import Model
-from masoniteorm.relationships import belongs_to
+=== "app/models/Post.py"
 
-class Post(Model):
-    __fillable__ = ['title', 'author_id', 'body']
+    ```python
+    """Post Model."""
+    from masoniteorm.models import Model
+    from masoniteorm.relationships import belongs_to
 
-    @belongs_to('author_id', 'id')
-    def author(self):
-        from app.models.User import User
-        return User
-```
-{% endtab %}
-{% endtabs %}
+    class Post(Model):
+        __fillable__ = ['title', 'author_id', 'body']
+
+        @belongs_to('author_id', 'id')
+        def author(self):
+            from app.models.User import User
+            return User
+    ```
 
 > Because of how Masonite does models, some models may rely on each other so it is typically better to perform the import inside the relationship like we did above to prevent any possibilities of circular imports.
 
-{% hint style="success" %}
-We won't go into much more detail here about different types of relationships but to learn more, refer to [Masonite ORM Relationships](https://orm.masoniteproject.com/models#relationships) documentation.
-{% endhint %}
+!!! success
+
+    We won't go into much more detail here about different types of relationships but to learn more, refer to [Masonite ORM Relationships](https://orm.masoniteproject.com/models#relationships) documentation.
 
 ## Designing Our Blog
 
@@ -456,52 +408,46 @@ We will also check if the user is logged in before creating a template.
 
 The URL for creating will be located at `/blog/create` and will be a simple form for creating a blog post
 
-{% tabs %}
-{% tab title="templates/blog.html" %}
+=== "templates/blog.html"
 
-```html
-<form action="/blog/create" method="POST">
-    {{ csrf_field }}
+    ```html
+    <form action="/blog/create" method="POST">
+        {{ csrf_field }}
 
-    <input type="name" name="title">
-    <textarea name="body"></textarea>
-</form>
-```
-{% endtab %}
-{% endtabs %}
+        <input type="name" name="title">
+        <textarea name="body"></textarea>
+    </form>
+    ```
 
 Notice here we have a `{{ csrf_field }}` below the `<form>` open tag. Masonite comes with CSRF protection so we need a token to render the hidden field with the CSRF token.
 
 Now we need to make sure the user is logged in before creating this so let's change up our template a bit:
 
-{% tabs %}
-{% tab title="templates/blog.html" %}
+=== "templates/blog.html"
 
-```html
-@if auth()
-    <form action="/blog/create" method="POST">
-        {{ csrf_field }}
+    ```html
+    @if auth()
+        <form action="/blog/create" method="POST">
+            {{ csrf_field }}
 
-        <label> Title </label>
-        <input type="name" name="title"><br>
+            <label> Title </label>
+            <input type="name" name="title"><br>
 
-        <label> Body </label>
-        <textarea name="body"></textarea>
+            <label> Body </label>
+            <textarea name="body"></textarea>
 
-        <input type="submit" value="Post!">
-    </form>
-@else
-    <a href="/login">Please Login</a>
-@endif
-```
-{% endtab %}
-{% endtabs %}
+            <input type="submit" value="Post!">
+        </form>
+    @else
+        <a href="/login">Please Login</a>
+    @endif
+    ```
 
 `auth()` is a view helper function that either returns the current user or returns `None`.
 
-{% hint style="success" %}
-Masonite uses Jinja2 templating so if you don't understand this templating, be sure to [Read Their Documentation](http://jinja.pocoo.org/docs/2.10/).
-{% endhint %}
+!!! success
+
+    Masonite uses Jinja2 templating so if you don't understand this templating, be sure to [Read Their Documentation](http://jinja.pocoo.org/docs/2.10/).
 
 ### Static Files
 
@@ -509,75 +455,67 @@ For simplicity sake, we won't be styling our blog with something like Bootstrap 
 
 Firstly, head to `storage/static/` and make a `blog.css` file and throw anything you like in it. For this tutorial we will make the html page slightly grey.
 
-{% tabs %}
-{% tab title="storage/static/blog.css" %}
-```css
-html {
-    background-color: #ddd;
-}
-```
-{% endtab %}
-{% endtabs %}
+=== "storage/static/blog.css"
+
+    ```css
+    html {
+        background-color: #ddd;
+    }
+    ```
 
 Now we can add it to our template like so right at the top:
 
-{% tabs %}
-{% tab title="templates/blog.html" %}
+=== "templates/blog.html"
 
-```html
-<link href="/static/blog.css" rel="stylesheet">
-@if auth()
-    <form action="/blog/create" method="POST">
-        {{ csrf_field }}
+    ```html
+    <link href="/static/blog.css" rel="stylesheet">
+    @if auth()
+        <form action="/blog/create" method="POST">
+            {{ csrf_field }}
 
-        <label> Title </label>
-        <input type="name" name="title"><br>
+            <label> Title </label>
+            <input type="name" name="title"><br>
 
-        <label> Body </label>
-        <textarea name="body"></textarea>
+            <label> Body </label>
+            <textarea name="body"></textarea>
 
-        <input type="submit" value="Post!">
-    </form>
-@else
-    <a href="/login">Please Login</a>
-@endif
-```
-{% endtab %}
-{% endtabs %}
+            <input type="submit" value="Post!">
+        </form>
+    @else
+        <a href="/login">Please Login</a>
+    @endif
+    ```
 
 That's it. Static files are really simple. It's important to know how they work but for this tutorial we will ignore them for now and focus on more of the backend.
 
 Javascript files are the same exact thing:
 
-{% tabs %}
-{% tab title="templates/blog.html" %}
+=== "templates/blog.html"
 
-```html
-<link href="/static/blog.css" rel="stylesheet">
-@if auth()
-    <form action="/blog/create" method="POST">
-        {{ csrf_field }}
+    ```html
+    <link href="/static/blog.css" rel="stylesheet">
+    @if auth()
+        <form action="/blog/create" method="POST">
+            {{ csrf_field }}
 
-        <label> Title </label>
-        <input type="name" name="title"><br>
+            <label> Title </label>
+            <input type="name" name="title"><br>
 
-        <label> Body </label>
-        <textarea name="body"></textarea>
+            <label> Body </label>
+            <textarea name="body"></textarea>
 
-        <input type="submit" value="Post!">
-    </form>
-@else
-    <a href="/login">Please Login</a>
-@endif
+            <input type="submit" value="Post!">
+        </form>
+    @else
+        <a href="/login">Please Login</a>
+    @endif
 
-<script src="/static/script.js"></script>
-```
-{% endtab %}
-{% endtabs %}
+    <script src="/static/script.js"></script>
+    ```
 
-{% hint style="success" %}
-For more information on static files, checkout the [Static Files](the-basics/static-files.md) documentaton.
-{% endhint %}
+!!! success
+
+    For more information on static files, checkout the [Static Files](the-basics/static-files.md) documentaton.
 
 ### The Controller For Creating And The Container
 
@@ -585,55 +523,49 @@ Notice that our action is going to `/blog/create` so we need to direct a route t
 
 Let's open back up the `routes/web.py` file and create a new route. Just add this to the `ROUTES` list:
 
-{% tabs %}
-{% tab title="routes/web.py" %}
-```python
-from masonite.routes import Route
-# ...
-ROUTES = [
+=== "routes/web.py"
+
+    ```python
+    from masonite.routes import Route
     # ...
-    Route.post('/blog/create', 'BlogController@store')
-]
-```
-{% endtab %}
-{% endtabs %}
+    ROUTES = [
+        # ...
+        Route.post('/blog/create', 'BlogController@store')
+    ]
+    ```
 
 and create a new store method on our controller:
 
-{% tabs %}
-{% tab title="app/controllers/BlogController.py" %}
-```python
-...
-def show(self, view: View):
-    return view.render('blog')
+=== "app/controllers/BlogController.py"
 
-# New store Method
-def store(self):
-    pass
-```
-{% endtab %}
-{% endtabs %}
+    ```python
+    ...
+    def show(self, view: View):
+        return view.render('blog')
+
+    # New store Method
+    def store(self):
+        pass
+    ```
 
 Now notice above in the form we are going to be receiving 2 form inputs: title and body. So let's import the `Post` model and create a new post with the input.
 
-{% tabs %}
-{% tab title="app/controllers/BlogController.py" %}
-```python
-from app.models.Post import Post
-from masonite.request import Request
-# ...
+=== "app/controllers/BlogController.py"
 
-def store(self, request: Request):
-    Post.create(
-        title=request.input('title'),
-        body=request.input('body'),
-        author_id=request.user().id
-    )
+    ```python
+    from app.models.Post import Post
+    from masonite.request import Request
+    # ...
 
-    return 'post created'
-```
-{% endtab %}
-{% endtabs %}
+    def store(self, request: Request):
+        Post.create(
+            title=request.input('title'),
+            body=request.input('body'),
+            author_id=request.user().id
+        )
+
+        return 'post created'
+    ```
 
 Notice that we now used `request: Request` here. This is the `Request` object. Where did this come from? This is the power and beauty of Masonite and your first introduction to the [Service Container](../architecture/service-container.md). The [Service Container](../architecture/service-container.md) is an extremely powerful implementation as allows you to ask Masonite for an object \(in this case `Request`\) and get that object. This is an important concept to grasp so be sure to read the documentation further.
 
@@ -658,13 +590,11 @@ Let's start with showing all posts
 
 Let's create a controller for the posts to separate it out from the `BlogController`.
 
-{% tabs %}
-{% tab title="terminal" %}
-```text
-$ python craft controller Post
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
+
+    ```text
+    $ python craft controller Post
+    ```
 
 Great! So now in our `show` method we will show all posts and then we will create a `single` method to show a specific post.
 
@@ -672,32 +602,28 @@ Great! So now in our `show` method we will show all posts and then we will creat
 
 Let's get the `show` method to return the posts view with all the posts:
 
-{% tabs %}
-{% tab title="app/controllers/PostController.py" %}
-```python
-from app.models.Post import Post
+=== "app/controllers/PostController.py"
 
-...
+    ```python
+    from app.models.Post import Post
 
-def show(self, view: View):
-    posts = Post.all()
+    ...
 
-    return view.render('posts', {'posts': posts})
-```
-{% endtab %}
-{% endtabs %}
+    def show(self, view: View):
+        posts = Post.all()
+
+        return view.render('posts', {'posts': posts})
+    ```
 
 ### Posts Route
 
 We need to add a route for this method:
 
-{% tabs %}
-{% tab title="routes/web.py" %}
-```python
-Route.get('/posts', 'PostController@show')
-```
-{% endtab %}
-{% endtabs %}
+=== "routes/web.py"
+
+    ```python
+    Route.get('/posts', 'PostController@show')
+    ```
 
 ### Posts View
 
@@ -719,19 +645,16 @@ Go ahead and run the server and head over to `http://localhost:8000/posts` route
 
 Remember we made our author relationship before. Masonite ORM will take that relationship and make an attribute from it so we can display the author's name as well:
 
-{% tabs %}
-{% tab title="templates/posts.html" %}
+=== "templates/posts.html"
 
-```html
-@for post in posts
-    {{ post.title }} by {{ post.author.name }}
-    <br>
-    {{ post.body }}
-    <hr>
-@endfor
-```
-{% endtab %}
-{% endtabs %}
+    ```html
+    @for post in posts
+        {{ post.title }} by {{ post.author.name }}
+        <br>
+        {{ post.body }}
+        <hr>
+    @endfor
+    ```
 
 Let's repeat the process but change our workflow a bit.
 
@@ -739,13 +662,11 @@ Let's repeat the process but change our workflow a bit.
 
 Next we want to just show a single post. We need to add a route for this method:
 
-{% tabs %}
-{% tab title="routes/web.py" %}
-```python
-Route.get('/post/@id', 'PostController@single')
-```
-{% endtab %}
-{% endtabs %}
+=== "routes/web.py"
+
+    ```python
+    Route.get('/post/@id', 'PostController@single')
+    ```
 
 Notice here we have a `@id` string. We can use this to grab that section of the URL in our controller in the next section below. This is like a route URL capture group.
 
@@ -753,43 +674,38 @@ Notice here we have a `@id` string. We can use this to grab that section of the 
 
 Let's create a `single` method so we show a single post.
 
-{% tabs %}
-{% tab title="app/controllers/PostController.py" %}
-```python
-from app.models.Post import Post
-from masonite.request import Request
-from masonite.views import View
-...
+=== "app/controllers/PostController.py"
 
-def single(self, view: View, request: Request):
-    post = Post.find(request.param('id'))
+    ```python
+    from app.models.Post import Post
+    from masonite.request import Request
+    from masonite.views import View
+    ...
 
-    return view.render('single', {'post': post})
-```
-{% endtab %}
-{% endtabs %}
+    def single(self, view: View, request: Request):
+        post = Post.find(request.param('id'))
+
+        return view.render('single', {'post': post})
+    ```
 
 We use the `param()` method to fetch the id from the URL. Remember this key was set in the route above when we specified the `@id`
 
-{% hint style="info" %}
-For a real application we might do something like `@slug` and then fetch it with `request().param('slug')`.
-{% endhint %}
+!!! info
+
+    For a real application we might do something like `@slug` and then fetch it with `request().param('slug')`.
 
 ### Single Post View
 
 We just need to display 1 post so lets just put together a simple view:
 
-{% tabs %}
-{% tab title="templates/single.html" %}
+=== "templates/single.html"
 
-```html
-{{ post.title }}
-<br>
-{{ post.body }}
-<hr>
-```
-{% endtab %}
-{% endtabs %}
+    ```html
+    {{ post.title }}
+    <br>
+    {{ post.body }}
+    <hr>
+    ```
 
 Go ahead and run the server and head over the `http://localhost:8000/post/1` route and then `http://localhost:8000/post/2` and see how the posts are different.
 
@@ -801,26 +717,24 @@ By now, all of the logic we have gone over so far will take you a long way so le
 
 Let's just make an update method on the `PostController`:
 
-{% tabs %}
-{% tab title="app/controllers/PostController.py" %}
-```python
-def update(self, view: View, request: Request):
-    post = Post.find(request.param('id'))
+=== "app/controllers/PostController.py"
 
-    return view.render('update', {'post': post})
+    ```python
+    def update(self, view: View, request: Request):
+        post = Post.find(request.param('id'))
 
-def store(self, request: Request):
-    post = Post.find(request.param('id'))
+        return view.render('update', {'post': post})
 
-    post.title = request.input('title')
-    post.body = request.input('body')
+    def store(self, request: Request):
+        post = Post.find(request.param('id'))
 
-    post.save()
+        post.title = request.input('title')
+        post.body = request.input('body')
 
-    return 'post updated'
-```
-{% endtab %}
-{% endtabs %}
+        post.save()
+
+        return 'post updated'
+    ```
 
 Since we are more comfortable with controllers we can go ahead and make two at once. We made one that shows a view that shows a form to update a post and then one that actually updates the post with the database.
 
@@ -828,37 +742,17 @@ Since we are more comfortable with controllers we can go ahead and make two at o
 
 * `templates/update.html`
 
-{% tabs %}
-{% tab templates/update.html" %}
-
-```html
-<form action="/post/{{ post.id }}/update" method="POST">
-    {{ csrf_field }}
-
-    <label for="">Title</label>
-    <input type="text" name="title" value="{{ post.title }}"><br>
-
-    <label>Body</label>
-    <textarea name="body">{{ post.body }}</textarea><br>
-
-    <input type="submit" value="Update">
-</form>
-```
-{% endtab %}
-{% endtabs %}
 
 ### Create The Routes:
 
 Remember we made 2 controller methods so let's attach them to a route here:
 
-{% tabs %}
-{% tab title="routes/web.py" %}
-```python
-Route.get('/post/@id/update', 'PostController@update'),
-Route.post('/post/@id/update', 'PostController@store'),
-```
-{% endtab %}
-{% endtabs %}
+=== "routes/web.py"
+
+    ```python
+    Route.get('/post/@id/update', 'PostController@update'),
+    Route.post('/post/@id/update', 'PostController@store'),
+    ```
 
 That should be it! We can now update our posts.
 
@@ -866,31 +760,27 @@ That should be it! We can now update our posts.
 
 Let's expand a bit and make a delete method.
 
-{% tabs %}
-{% tab title="app/controllers/PostController.py" %}
-```python
-from masonite.request import Request
-...
+=== "app/controllers/PostController.py"
 
-def delete(self, request: Request):
-    post = Post.find(request.param('id'))
+    ```python
+    from masonite.request import Request
+    ...
 
-    post.delete()
+    def delete(self, request: Request):
+        post = Post.find(request.param('id'))
 
-    return 'post deleted'
-```
-{% endtab %}
-{% endtabs %}
+        post.delete()
+
+        return 'post deleted'
+    ```
 
 ### Make the route:
 
-{% tabs %}
-{% tab title="routes/web.py" %}
-```python
-Route.get('/post/@id/delete', 'PostController@delete'),
-```
-{% endtab %}
-{% endtabs %}
+=== "routes/web.py"
+
+    ```python
+    Route.get('/post/@id/delete', 'PostController@delete'),
+    ```
 
 Notice we used a `GET` route here, It would be much better to use a `POST` method but for simplicity sake will assume you can create one by now. We will just add a link to our update method which will delete the post.
 
@@ -898,25 +788,22 @@ Notice we used a `GET` route here, It would be much better to use a `POST` metho
 
 We can throw a delete link right inside our update template:
 
-{% tabs %}
-{% tab title="templates/update.html" %}
+=== "templates/update.html"
 
-```html
-<form action="/post/{{ post.id }}/update" method="POST">
-    {{ csrf_field }}
+    ```html
+    <form action="/post/{{ post.id }}/update" method="POST">
+        {{ csrf_field }}
 
-    <label for="">Title</label>
-    <input type="text" name="title" value="{{ post.title }}"><br>
+        <label for="">Title</label>
+        <input type="text" name="title" value="{{ post.title }}"><br>
 
-    <label>Body</label>
-    <textarea name="body">{{ post.body }}</textarea><br>
+        <label>Body</label>
+        <textarea name="body">{{ post.body }}</textarea><br>
 
-    <input type="submit" value="Update">
+        <input type="submit" value="Update">
 
-    <a href="/post/{{ post.id }}/delete"> Delete </a>
-</form>
-```
-{% endtab %}
-{% endtabs %}
+        <a href="/post/{{ post.id }}/delete"> Delete </a>
+    </form>
+    ```
 
 Great! You now have a blog that you can use to create, view, update and delete posts! Go on to create amazing things!

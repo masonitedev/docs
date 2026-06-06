@@ -2,9 +2,9 @@ There are a lot of times when you need to validate incoming input either from a 
 
 Validations are based on rules where you can pass in a key or a list of keys to the rule. The validation will then use all the rules and apply them to the dictionary to validate.
 
-{% hint style="info" %}
-You can see a [list of available rules here](validation.md#available-rules).
-{% endhint %}
+!!! info
+
+    You can see a [list of available rules here](validation.md#available-rules).
 
 # Validating The Request
 
@@ -36,9 +36,9 @@ def show(self, request: Request, response: Response, validate: Validator):
 
 This validation will read like "user and email are required and the terms must be accepted" \(more on available rules and what they mean in a bit\)
 
-{% hint style="info" %}
-Note you can either pass in a single value or a list of values
-{% endhint %}
+!!! info
+
+    Note you can either pass in a single value or a list of values
 
 # Displaying Errors in Views
 
@@ -113,17 +113,15 @@ In this case you can create a new rule.
 
 You can easily create a new rule boiler plate by running:
 
-{% tabs %}
-{% tab title="terminal" %}
-```bash
-$ python craft rule equals_masonite
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
 
-{% hint style="info" %}
-There is no particular reason that rules are lowercase class names. The main reason is that it improves readability when you end up using it as a method if you choose to register the rule with the validation class like you will see below.
-{% endhint %}
+    ```bash
+    $ python craft rule equals_masonite
+    ```
+
+!!! info
+
+    There is no particular reason that rules are lowercase class names. The main reason is that it improves readability when you end up using it as a method if you choose to register the rule with the validation class like you will see below.
 
 This will create a boiler plate rule inside app/rules/equals\_masonite.py that looks like:
 
@@ -257,13 +255,11 @@ In any service provider's boot method \(preferably a provider where `wsgi=False`
 
 If you don't have a provider yet we can make one specifically for adding custom rules:
 
-{% tabs %}
-{% tab title="terminal" %}
-```bash
-$ python craft provider RuleProvider
-```
-{% endtab %}
-{% endtabs %}
+=== "terminal"
+
+    ```bash
+    $ python craft provider RuleProvider
+    ```
 
 Then inside this rule provider's boot method we can resolve and register our rule. This will look like:
 
@@ -307,9 +303,9 @@ def show(self, request: Request, validate: Validator):
 
 notice we called the method as if it was apart of the validator class this whole time.
 
-{% hint style="info" %}
-Registering rules is especially useful when creating packages for Masonite that contain new rules.
-{% endhint %}
+!!! info
+
+    Registering rules is especially useful when creating packages for Masonite that contain new rules.
 
 # Using The Validator Class
 
@@ -635,9 +631,9 @@ validate.accepted(['terms', 'active'], messages = {
 
 Now instead of returning the generic errors, the error message returned will be the one you supplied.
 
-{% hint style="info" %}
-Leaving out a message will result in the generic one still being returned for that value.
-{% endhint %}
+!!! info
+
+    Leaving out a message will result in the generic one still being returned for that value.
 
 # Exceptions
 

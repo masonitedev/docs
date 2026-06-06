@@ -22,8 +22,7 @@ Masonite 2 brings a more explicit way of declaring Service Providers in your app
 
 Now all Service Providers should be imported at top of the file and added to the list:
 
-{% code title="config/providers.py" %}
-```python
+```python title="config/providers.py"
 from masonite.providers import (
     AppProvider,
     SessionProvider,
@@ -40,11 +39,10 @@ PROVIDERS = [
     ....
 ]
 ```
-{% endcode %}
 
-{% hint style="info" %}
-String providers will still work but it is not recommended and will not be supported in current and future releases of Masonite.
-{% endhint %}
+!!! info
+
+    String providers will still work but it is not recommended and will not be supported in current and future releases of Masonite.
 
 ## WSGI changes
 
@@ -70,8 +68,7 @@ container.bind('WSGIProviders', providers)
 
 Then change the code logic of bootstrapping service providers from:
 
-{% code title="wsgi.py" %}
-```python
+```python title="wsgi.py"
 for provider in container.make('Application').PROVIDERS:
     locate(provider)().load_app(container).register()
 
@@ -80,12 +77,10 @@ for provider in container.make('Application').PROVIDERS:
     if located_provider.wsgi is False:
         container.resolve(locate(provider)().load_app(container).boot)
 ```
-{% endcode %}
 
 to:
 
-{% code title="wsgi.py" %}
-```python
+```python title="wsgi.py"
  for provider in container.make('ProvidersConfig').PROVIDERS:
     located_provider = provider()
     located_provder.load_app(container).register()
@@ -95,22 +90,19 @@ to:
         container.resolve(located_provider.boot)
         container.make('Providers').append(located_provider)
 ```
-{% endcode %}
 
 and change the logic in `bootstrap/start.py` to:
 
-{% code title="bootstrap/start.py" %}
-```python
+```python title="bootstrap/start.py"
 for provider in container.make('WSGIProviders'):
     container.resolve(located_provider.boot)
 ```
-{% endcode %}
 
 Notice here we split the providers list when the server first boots up into two lists which significantly lowers the overhead of each request.&#x20;
 
-{% hint style="info" %}
-This change should significantly boost speed performances as providers no longer have to be located via pydoc. You should see an immediate decrease in the time it takes for the application to serve a request. Rough time estimates say that this change should increase the request times by about 5x as fast.
-{% endhint %}
+!!! info
+
+    This change should significantly boost speed performances as providers no longer have to be located via pydoc. You should see an immediate decrease in the time it takes for the application to serve a request. Rough time estimates say that this change should increase the request times by about 5x as fast.
 
 ## Duplicate Class Names
 
@@ -162,9 +154,9 @@ def show(self):
 
 Some variable internals have changed to prepend a double underscore to them to better symbolize they are being handled internally. Because of this we need to change any instances of csrf\_token to \_\_token in  the CSRF Middleware file.
 
-{% hint style="info" %}
-You can check for what the class should look like from the [MasoniteFramework/masonite](https://github.com/masonitedev/masonite) repository
-{% endhint %}
+!!! info
+
+    You can check for what the class should look like from the [MasoniteFramework/masonite](https://github.com/masonitedev/masonite) repository
 
 ## Autoloading
 
@@ -172,8 +164,7 @@ Masonite 2 comes with a new autoloader. This can load all classes in any directo
 
 Simply add a new `AUTOLOAD` constant in your `config/application.py` file. This is the entire section of the autoload configuration.
 
-{% code title="config/application.py" %}
-```python
+```python title="config/application.py"
 '''
 |--------------------------------------------------------------------------
 | Autoload Directories
@@ -189,12 +180,10 @@ AUTOLOAD = [
     'app',
 ]
 ```
-{% endcode %}
 
 By default this points to the app directory where models are stored by default but if you moved your models to other directories like app/models or app/admin/models then add those directories to your list:
 
-{% code title="config/application.py" %}
-```python
+```python title="config/application.py"
 ....
 
 AUTOLOAD = [
@@ -203,11 +192,10 @@ AUTOLOAD = [
     'app/admin/models'
 ]
 ```
-{% endcode %}
 
-{% hint style="warning" %}
-Be caution that this will autoload all models into the [Service Container](broken-reference) with the class name as the key and the class as the binding.
-{% endhint %}
+!!! warning
+
+    Be caution that this will autoload all models into the [Service Container](broken-reference) with the class name as the key and the class as the binding.
 
 ## RedirectionProvider
 
@@ -217,8 +205,7 @@ Because of a minor rewrite of the Request class, we now do not need the Redirect
 
 There is a new status code provider which adds support for adding custom status codes and rendering better default status code pages such as 400 and 500 error pages. This should be added right above the StartResponseProvider:
 
-{% code title="config/application.py" %}
-```python
+```python title="config/application.py"
 PROVIDERS = [
     # Framework Providers
     ...
@@ -233,19 +220,16 @@ PROVIDERS = [
     ...
 ]
 ```
-{% endcode %}
 
 ## .env File
 
 The .env got a small upgrade and in order to make the `APP_DEBUG` variable consistent, it should be set to either `True` or `False`. Previously this was set to something like `true` or `false`.
 
-{% code title=".env" %}
-```
+``` title=".env"
 APP_DEBUG=True
 # or
 APP_DEBUG=False
 ```
-{% endcode %}
 
 Masonite 2 also removed the `APP_LOG_LEVEL` environment variable completely.
 
@@ -253,7 +237,7 @@ Masonite 2 also removed the `APP_LOG_LEVEL` environment variable completely.
 
 That's it! You're all done upgrading Masonite 1.6 to Masonite 2.0. Build something awesome!
 
-{% hint style="success" %}
-Be sure to read about all the [changes in Masonite 2](../whats-new/masonite-2.0.md) to ensure that your application is completely up to date with many of the latest decisions and be sure to thoroughly test your application. Feel free to open an issue if any problems arise during upgrading.
-{% endhint %}
+!!! success
+
+    Be sure to read about all the [changes in Masonite 2](../whats-new/masonite-2.0.md) to ensure that your application is completely up to date with many of the latest decisions and be sure to thoroughly test your application. Feel free to open an issue if any problems arise during upgrading.
 

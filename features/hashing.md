@@ -6,15 +6,13 @@ can be used with Masonite (default is Bcrypt).
 Hashing configuration is located at `config/application.py` file. In this file, you can configure which protocol
 to use.
 
-{% code title="config/application.py" %}
-```python
+```python title="config/application.py"
 HASHING = {
     "default": "bcrypt",
     "bcrypt": {"rounds": 10},
     "argon2": {"memory": 1024, "threads": 2, "time": 2},
 }
 ```
-{% endcode %}
 
 # Hashing a string
 

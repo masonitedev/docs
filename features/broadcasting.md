@@ -44,9 +44,9 @@ Include the pusher-js script tag on your page
 ```html
 <script src="https://js.pusher.com/7.0.3/pusher.min.js"></script>
 ```
-{% hint style="warning" %}
-This is the quickest way to install Pusher. But for a real app you will often use a build system to [install and compile assets](/features/compiling-assets.md#compiling) and will install the Javascript Pusher SDK with `npm install pusher-js` and then import Pusher class with `import Pusher from 'pusher-js';`.
-{% endhint %}
+!!! warning
+
+    This is the quickest way to install Pusher. But for a real app you will often use a build system to [install and compile assets](/features/compiling-assets.md#compiling) and will install the Javascript Pusher SDK with `npm install pusher-js` and then import Pusher class with `import Pusher from 'pusher-js';`.
 
 Create a Pusher instance configured with your credentials
 
@@ -56,9 +56,9 @@ const pusher = new Pusher("478b45309560f3456211", {
 });
 ```
 
-{% hint style="warning" %}
-It is advised to use environment variables instead of hard-coding credentials client-side. If you're using Laravel Mix to [compile assets](/features/compiling-assets.md#compiling) then you should prefix your environment variables with `MIX_`.
-{% endhint %}
+!!! warning
+
+    It is advised to use environment variables instead of hard-coding credentials client-side. If you're using Laravel Mix to [compile assets](/features/compiling-assets.md#compiling) then you should prefix your environment variables with `MIX_`.
 
 Now you're ready to subscribe to channels and listen for channels events.
 
@@ -107,9 +107,9 @@ You may broadcast on multiple channels as well:
 Broadcast.channel(['channel1', 'channel2'], "event_name", {"key": "value"})
 ```
 
-{% hint style="info" %}
-This type of broadcasting will emit all channels as public. For private and presence channels, keep reading.
-{% endhint %}
+!!! info
+
+    This type of broadcasting will emit all channels as public. For private and presence channels, keep reading.
 
 
 # Listening For Events

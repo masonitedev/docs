@@ -51,10 +51,10 @@ You can use a string binding defining the controller class and its method `{Cont
 Route.get('/welcome', 'WelcomeController@show')
 ```
 
-{% hint style="warning" %}
-When using string binding, you must ensure that this controller class can be imported correctly and that
-the controller class is in a [registered controller location](/features/controllers.md#controller-locations).
-{% endhint %}
+!!! warning
+
+    When using string binding, you must ensure that this controller class can be imported correctly and that
+    the controller class is in a [registered controller location](/features/controllers.md#controller-locations).
 
 Note that this is the prefered way as it will avoid circular dependencies as no import is required
 in your route file.

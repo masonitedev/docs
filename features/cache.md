@@ -11,8 +11,7 @@ cache stores with a name via the `STORES` dictionary and the default to use in y
 
 Masonite is configured to use the File cache driver by default, named `local`.
 
-{% code title="config/cache.py" %}
-```python
+```python title="config/cache.py"
 STORES = {
     "default": "local",
     "local": {
@@ -29,11 +28,10 @@ STORES = {
     # ...
 }
 ```
-{% endcode %}
 
-{% hint style="info" %}
-For production applications, it is recommended to use a more efficient driver such as `Memcached` or `Redis`.
-{% endhint %}
+!!! info
+
+    For production applications, it is recommended to use a more efficient driver such as `Memcached` or `Redis`.
 
 ## File Cache
 

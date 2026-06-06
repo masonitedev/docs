@@ -7,8 +7,7 @@ to use.
 
 Masonite is configured to use the Cookie session driver by default, named `cookie`.
 
-{% code title="config/session.py" %}
-```python
+```python title="config/session.py"
 DRIVERS = {
     "default": "cookie",
     "cookie": {},
@@ -22,7 +21,6 @@ DRIVERS = {
     },
 }
 ```
-{% endcode %}
 
 ## Cookie
 

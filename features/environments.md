@@ -10,9 +10,9 @@ We'll walk through how to configure your environments in this documentation.
 
 Environment variables should be set on a project per project basis inside your `.env` file.
 
-{% hint style="warning" %}
-Never commit any of your `.env` files into source control ! It would be a security risk in the event someone gained access to your repository since sensitive credentials and data would get exposed.
-{% endhint %}
+!!! warning
+
+    Never commit any of your `.env` files into source control ! It would be a security risk in the event someone gained access to your repository since sensitive credentials and data would get exposed.
 
 That is why `.env` and `.env.*` are in the project `.gitignore` file by default, so you should not worry about accidentally committing those files to source control.
 
@@ -32,11 +32,9 @@ Environment files are loaded in this order:
 the `.env.{APP_ENV}` file corresponding to this environment name.
 
 For example, if `APP_ENV` is set to `local`, Masonite will additionally load the `.env.local` environment file.
-{% code title=".env" %}
-```bash
+```bash title=".env"
 APP_ENV=local
 ```
-{% endcode %}
 
 When the server is ready all those variables will be loaded into the current environment ready to be accessed in the different
 Masonite configuration files or directly with `env()` helper.
@@ -134,7 +132,7 @@ from masonite.configuration import config
 config("application.debug") #== True
 ```
 
-{% hint style="warning" %}
-Never deploy an application in production with debug mode enabled ! This could lead to expose some
-sensitive configuration data and environment variables to the end user.
-{% endhint %}
+!!! warning
+
+    Never deploy an application in production with debug mode enabled ! This could lead to expose some
+    sensitive configuration data and environment variables to the end user.

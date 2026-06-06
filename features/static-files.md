@@ -8,15 +8,11 @@ The directories to include as keys are simply the location of your static file l
 
 For this setup, our `STATICFILES` constant should look like:
 
-{% code title="config/filesystem.py" %}
-
-```python
+```python title="config/filesystem.py"
 STATICFILES = {
     'storage/assets/css': 'assets/',
 }
 ```
-
-{% endcode %}
 
 Now in our templates we can use:
 
@@ -32,9 +28,7 @@ All templates have a static function that can be used to assist in getting locat
 
 Take this for example:
 
-{% code title="config/filesystem.py" %}
-
-```python
+```python title="config/filesystem.py"
 ....
 's3': {
   's3_client': 'sIS8shn...'
@@ -43,8 +37,6 @@ Take this for example:
   },
 ....
 ```
-
-{% endcode %}
 
 ```html
 ...
@@ -63,9 +55,7 @@ this will render:
 
 You can also make the config location a dictionary and use dot notation:
 
-{% code title="config/filesystem.py" %}
-
-```python
+```python title="config/filesystem.py"
 ....
 's3': {
   's3_client': 'sIS8shn...'
@@ -76,8 +66,6 @@ You can also make the config location a dictionary and use dot notation:
   },
 ....
 ```
-
-{% endcode %}
 
 and use the dot notation like so:
 
@@ -107,9 +95,7 @@ storage/
 
 and you can alias this in your `STATICFILES` constant:
 
-{% code title="config/filesystem.py" %}
-
-```python
+```python title="config/filesystem.py"
 STATICFILES = {
     # folder          # template alias
     'storage/static': 'static/',
@@ -117,8 +103,6 @@ STATICFILES = {
     'storage/public': '/'
 }
 ```
-
-{% endcode %}
 
 You will now be able to access `localhost:8000/robots.txt` and you will have your robots.txt served correctly and it can be indexed by search engines properly.
 
