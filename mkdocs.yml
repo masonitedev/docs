@@ -29,7 +29,6 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   features:
-    - navigation.sections
     - navigation.top
     - navigation.footer
     - search.suggest
@@ -108,7 +107,7 @@ extra:
 
 nav:
   - Home: README.md
-  - Prologue:
+  - The Project:
     - Release Notes:
       - "Masonite 5.1": whats-new/masonite-5.1.md
       - "Masonite 5.0": whats-new/masonite-5.0.md
@@ -124,12 +123,12 @@ nav:
     - "Directory Structure": getting-started/directory-structure.md
     - "Deployment": getting-started/deployment.md
     - "Tutorial: Build a Blog": getting-started/create-a-blog.md
-  - Architecture Concepts:
+  - Foundations:
     - "Request Lifecycle": architecture/request-lifecycle.md
     - "Service Container": architecture/service-container.md
     - "Service Providers": architecture/service-providers.md
     - "Facades": architecture/facades.md
-  - The Basics:
+  - Building Blocks:
     - "Routing": the-basics/routing.md
     - "Middleware": the-basics/middleware.md
     - "CSRF Protection": the-basics/csrf.md
@@ -143,7 +142,7 @@ nav:
     - "Validation": the-basics/validation.md
     - "Error Handling": the-basics/error-handling.md
     - "Logging": the-basics/logging.md
-  - Digging Deeper:
+  - The Toolbox:
     - "API Development": digging-deeper/api.md
     - "Broadcasting": digging-deeper/broadcasting.md
     - "Caching": digging-deeper/cache.md

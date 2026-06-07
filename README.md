@@ -53,9 +53,9 @@ Thank you for everything, Joe. ❤️
 This documentation is designed to be read from less to more — but every page also stands on its own when you need a reference:
 
 * **[Getting Started](getting-started/installation.md)** — install Masonite, create your first application, understand configuration and the directory structure, and deploy to production.
-* **[Architecture Concepts](architecture/request-lifecycle.md)** — how Masonite works under the hood: the request lifecycle, the service container, service providers and facades.
-* **The Basics** — the features you will use in every application: [routing](the-basics/routing.md), [controllers](the-basics/controllers.md), [requests](the-basics/request.md), [responses](the-basics/response.md), [views](the-basics/views.md), [validation](the-basics/validation.md) and friends.
-* **Digging Deeper** — the rest of the toolbox: [mail](digging-deeper/mail.md), [queues](digging-deeper/queues.md), [events](digging-deeper/events.md), [caching](digging-deeper/cache.md), [task scheduling](digging-deeper/scheduling.md), [API development](digging-deeper/api.md) and more.
+* **[Foundations](architecture/request-lifecycle.md)** — how Masonite works under the hood: the request lifecycle, the service container, service providers and facades.
+* **Building Blocks** — the features you will use in every application: [routing](the-basics/routing.md), [controllers](the-basics/controllers.md), [requests](the-basics/request.md), [responses](the-basics/response.md), [views](the-basics/views.md), [validation](the-basics/validation.md) and friends.
+* **The Toolbox** — everything else in the kit: [mail](digging-deeper/mail.md), [queues](digging-deeper/queues.md), [events](digging-deeper/events.md), [caching](digging-deeper/cache.md), [task scheduling](digging-deeper/scheduling.md), [API development](digging-deeper/api.md) and more.
 * **Security** — [authentication](security/authentication.md), [authorization](security/authorization.md), [CORS](security/cors.md) and [hashing](security/hashing.md).
 * **[Masonite ORM](orm/introduction.md)** — models, query builder, migrations, seeding and collections.
 * **[Testing](testing/getting-started.md)** — everything you need to test your application with confidence.

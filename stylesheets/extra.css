@@ -70,16 +70,47 @@
 
 /* ---------- Shared chrome ---------- */
 
-/* Sidebar: bold section headings, quiet links, violet active state */
-.md-nav__item--section > .md-nav__link {
+/* Sidebar: bold top-level group labels, quiet links, violet active state.
+   Groups are collapsible (no navigation.sections) and only the group of
+   the current page is expanded on load, like the Laravel docs. */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
   font-weight: 700;
   font-size: 0.72rem;
   text-transform: none;
-  color: var(--md-default-fg-color) !important;
+  color: var(--md-default-fg-color);
 }
 
 .md-nav__link {
   font-size: 0.7rem;
+}
+
+/* Sidebar rhythm, Laravel-style: air between groups and indented group
+   contents so each one reads as its own block. Desktop only — the
+   mobile drawer keeps Material's slide-in levels. */
+@media screen and (min-width: 76.25em) {
+  /* Space between top-level groups */
+  .md-nav--primary > .md-nav__list > .md-nav__item {
+    margin-top: 0.9em;
+  }
+
+  .md-nav--primary > .md-nav__list > .md-nav__item:first-child {
+    margin-top: 0;
+  }
+
+  /* Nested groups inside a group (Release Notes, What's New, ...):
+     hairline guide along their pages */
+  .md-nav--primary .md-nav__item--nested .md-nav__item--nested > .md-nav > .md-nav__list {
+    border-left: 1px solid rgba(20, 24, 30, 0.12);
+  }
+
+  [data-md-color-scheme="slate"]
+  .md-nav--primary
+  .md-nav__item--nested
+  .md-nav__item--nested
+  > .md-nav
+  > .md-nav__list {
+    border-left-color: #232a33;
+  }
 }
 
 .md-nav__link--active,
