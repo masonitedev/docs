@@ -154,6 +154,7 @@ nav:
     - "File Storage": digging-deeper/filesystem.md
     - "Hash ID's": digging-deeper/hashid.md
     - "Helpers": digging-deeper/helpers.md
+    - "HTTP Client": digging-deeper/http-client.md
     - "Mail": digging-deeper/mail.md
     - "Notifications": digging-deeper/notifications.md
     - "Package Development": digging-deeper/package-development.md
