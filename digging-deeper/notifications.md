@@ -319,10 +319,10 @@ The second parameter can be a `channel name`, a `channel ID`or a `webhook URL`.
 
 ### SMS
 
-Sending SMS notifications in Masonite is powered by [Vonage](https://www.vonage.com/communications-apis/sms/) (formerly Nexmo). Before you can send notifications via Vonage, you need to install the `vonage` Python client.
+Sending SMS notifications in Masonite is powered by [Vonage](https://www.vonage.com/communications-apis/sms/) (formerly Nexmo). Before you can send notifications via Vonage, you need to install the `vonage` Python client (version 4 or above).
 
 ```
-$ pip install vonage
+$ pip install "vonage>=4"
 ```
 
 Then you should configure the `VONAGE_KEY` and `VONAGE_SECRET` credentials in `notifications.py` configuration file:
