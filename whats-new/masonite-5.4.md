@@ -33,3 +33,9 @@ Masonite 5.4 is a drop-in upgrade — the standard `Kernel` your project ships w
 One behavior change is worth knowing about:
 
 * **The test response capsule is registered lazily.** The `tests.response` binding is now wired up only when the application is running under the test runner, instead of on every boot. Your tests are unaffected. If you depended on that binding outside of a test run, register it yourself in a service provider.
+
+## Patch Releases
+
+### 5.4.1
+
+* **Package providers resolve their root reliably.** A package whose name appeared in the project's filesystem path — an app created in a directory like `myapp-collapsar`, or an editable install from a repository folder named after the package — could crash on boot with `views() first argument must be a folder containing all package views.` `PackageProvider.root()` now resolves the package directory through Python's import system instead of matching on the file path, so the location is found correctly regardless of where the project lives.
