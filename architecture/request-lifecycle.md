@@ -29,6 +29,24 @@ This file runs **once**, when the WSGI server (the [development server](../diggi
 * The **framework kernel** (`masonite.foundation.Kernel`) loads your `.env` file, binds the core machinery into the [Service Container](service-container.md) — the router, the middleware capsule, the craft commands — and sets the response handler, the function that will process every incoming request.
 * Your **application kernel** (`app/Kernel.py`) is yours to edit. It loads your configuration, declares your HTTP and route middleware stacks, and registers all the locations Masonite should know about: where your controllers, routes, views, models and migrations live.
 
+### Building a Custom Kernel
+
+Most applications never touch the framework kernel — the standard `Kernel` gives you everything, including the full suite of craft commands. But if you need a leaner boot (a queue worker, a slimmed-down service, or an embedded use that doesn't need the command line at all), you can build your own root kernel on top of `CoreKernel`:
+
+```python
+from masonite.foundation import CoreKernel
+
+
+class Kernel(CoreKernel):
+    def register(self) -> None:
+        super().register()
+        # register only the commands and services this application needs
+```
+
+`CoreKernel` registers just the essentials: it loads your environment, sets the response handler and storage path, and binds the router, the middleware capsule, the loader, and an empty command registry. The standard `Kernel` extends it to add the built-in craft commands on top, and — when running under the test runner — the test response helpers.
+
+Both kernels are exported from `masonite.foundation`, and every import inside them is loaded lazily, so a custom kernel only pays for what it actually registers.
+
 ### Service Providers: `register()`
 
 Next, every [service provider](service-providers.md) listed in `config/providers.py` has its `register()` method called, one by one, in order. Providers use `register()` to bind their services into the container: the view engine, the mail manager, the queue manager, the ORM and so on.
