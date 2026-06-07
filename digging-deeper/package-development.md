@@ -91,7 +91,7 @@ The default package layout come with one basic test. You should see this test pa
 
 ### Running the test project
 
-The default package layout comes with a test project located in `tests/integrations`. This project is really useful to directly test your package behaviour. It is scaffolded as a default Masonite project with your package already installed (see [Installing a Package](#installing-a-package) section). You can run the project with the usual command:
+The default package layout comes with a test project located in `tests/integrations`. This project is really useful to directly test your package behaviour. It is scaffolded as a default Masonite project with your package already installed. You can run the project with the usual command:
 
 ```bash
 $ python craft serve

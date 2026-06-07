@@ -83,6 +83,7 @@ plugins:
         "features/scheduling.md": "digging-deeper/scheduling.md"
         "features/tinker.md": "digging-deeper/tinker.md"
         "features/uploading.md": "digging-deeper/filesystem.md"
+        "sponsors.md": "prologue/sponsors.md"
 
 markdown_extensions:
   - admonition

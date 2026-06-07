@@ -36,7 +36,7 @@ Plus there will be fantastic tutorials out there for beginners to find and watch
 
 ## Fix the Documentation
 
-This documentation is fantastic but there are spots where it could be improved. Maybe we haven't explained something fully or something just doesn't make sense to you. Masonite uses [Gitbook.com](http://gitbook.com) to host it's documentation and with that you are able to comment directly on the documentation which will start a discussion between you and the documentation collaborators. So if you want to cycle through the documentation page by page and get acquainted with the framework but at the same time contribute to the documentation, this is perfect for you.
+This documentation is fantastic but there are spots where it could be improved. Maybe we haven't explained something fully or something just doesn't make sense to you. The documentation lives in the [masonitedev/docs](https://github.com/masonitedev/docs) repository and every page has an edit button (the pencil icon at the top) that takes you straight to the file on GitHub, where you can propose a change in a pull request. So if you want to cycle through the documentation page by page and get acquainted with the framework while contributing at the same time, this is perfect for you.
 
 ## Report Bugs
 

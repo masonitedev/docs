@@ -6,7 +6,7 @@ Masonite 1.5 is focused on a few bug fixes and changes to several core classes i
 
 ## Masonite Entry
 
-Masonite 1.5 is releasing also with a new official package for adding RESTful API's to your project. This package used API Resources which are classes that can add a plethora of capabilities to your API endpoints. You can read more about it at the [Masonite Entry](https://masoniteframework.gitbook.io/masonite-entry) documentation.
+Masonite 1.5 is releasing also with a new official package for adding RESTful API's to your project. This package used API Resources which are classes that can add a plethora of capabilities to your API endpoints. You can read more about it at the Masonite Entry documentation.
 
 ## HTTP Methods
 
@@ -18,7 +18,7 @@ Nearly all dependencies have been moved to the core Masonite package. The only t
 
 ## Changing Form Request Methods
 
-HTML forms only support GET and POST so there is no the ability to add any other HTTP methods like `PUT` and `PATCH` which will change the actual request method on submission. You can read more about this in the [Requests](broken-reference) documentation.
+HTML forms only support GET and POST so there is no the ability to add any other HTTP methods like `PUT` and `PATCH` which will change the actual request method on submission. You can read more about this in the Requests documentation.
 
 ## Added Shorthand Route Helpers
 
@@ -32,27 +32,27 @@ If you would like to use API's you will have to use the Masonite Entry package i
 
 ## Headers
 
-You can now get and set any header information using the new `Request.header` method. This also allows third party packages to manipulate header information. Read more about this in the [Requests](broken-reference) documentation.
+You can now get and set any header information using the new `Request.header` method. This also allows third party packages to manipulate header information. Read more about this in the Requests documentation.
 
 ## Cookies
 
-You can now delete cookies using the `delete_cookie` method as well as set expiration dates for them. See the [Requests](broken-reference) documentation for more information.
+You can now delete cookies using the `delete_cookie` method as well as set expiration dates for them. See the Requests documentation for more information.
 
 ## Caching Driver Update
 
-The Cache driver now has an update method which can update a cache value by key. This is useful if you want to change a key value or increment it. Storing a cache file also now auto creates that directory. Read more about this in the [Caching](broken-reference) documentation.
+The Cache driver now has an update method which can update a cache value by key. This is useful if you want to change a key value or increment it. Storing a cache file also now auto creates that directory. Read more about this in the Caching documentation.
 
 ## An All New Craft Command
 
-Craft commands have been built from the ground up with the cleo package. It's an excellent package that is built around the extendability of commands by using primarily classes (instead of decorator functions). Read more under [The Craft Command](broken-reference) documentation
+Craft commands have been built from the ground up with the cleo package. It's an excellent package that is built around the extendability of commands by using primarily classes (instead of decorator functions). Read more under The Craft Command documentation
 
 ## Adding Commands
 
-It is now possible to add craft commands to craft. You can read more about how under [The Craft Command](broken-reference) documentation
+It is now possible to add craft commands to craft. You can read more about how under The Craft Command documentation
 
 ## Adding Migration Directories
 
-You can now add more migration directories by adding it to the container with a key ending in `MigrationDirectory`. This will add the directory to the list of directory that run when migrate commands are ran. You can read more about this in the [Creating Packages](broken-reference) documentation.
+You can now add more migration directories by adding it to the container with a key ending in `MigrationDirectory`. This will add the directory to the list of directory that run when migrate commands are ran. You can read more about this in the Creating Packages documentation.
 
 ## Added Sessions
 

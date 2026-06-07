@@ -129,7 +129,7 @@ from masonite.validation import Validator
             return self.request.redirect_to('register').with_errors(errors)
 ```
 
-You can do a lot of other awesome things like rule enclosures. Read more under the [Validation documentation](broken-reference)
+You can do a lot of other awesome things like rule enclosures. Read more under the Validation documentation
 
 ### Auth class now auto resolves it's own request class
 

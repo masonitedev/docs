@@ -228,11 +228,11 @@ Notifications can be sent to a Slack workspace in two ways in Masonite:
 * Slack Incoming Webhooks [more here](https://api.slack.com/messaging/webhooks)
 * Slack Web API [more here](https://api.slack.com/methods/chat.postMessage)
 
-**Incoming Webhooks**
+#### Incoming Webhooks
 
 You will need to [configure an "Incoming Webhook"](https://api.slack.com/messaging/webhooks) integration for your Slack workspace. This integration will provide you with a URL you may use when routing Slack notifications. This URL will target a specific Slack channel.
 
-**Web API**
+#### Web API
 
 You will need to [generate a token](https://api.slack.com/web#slack-web-api\_\_authentication) to interact with your Slack workspace.
 
@@ -276,8 +276,8 @@ You can find all blocks name and options in [`slackblocks` documentation](https:
 
 You should define the related `route_notification_for_slack` method on your notifiable to return either
 
-* a webhook URL or a list of webhook URLs (if you're using [Incoming Webhooks](#slack-incoming-webhooks))
-* a channel name/ID or a list of channels names/IDs (if you're using [Slack Web API](#slack-web-api))
+* a webhook URL or a list of webhook URLs (if you're using [Incoming Webhooks](#incoming-webhooks))
+* a channel name/ID or a list of channels names/IDs (if you're using [Slack Web API](#web-api))
 
 ```python
 class User(Model, Notifiable):

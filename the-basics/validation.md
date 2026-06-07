@@ -1335,7 +1335,7 @@ The available patterns are:
 * `123-456-7890`
 * `(123)456-7890`
 
-## Postal Code
+## Postal_code
 
 Every country has their own postal code formats. We added regular expressions for over 130 countries which you can specify by using a comma separated string of country codes:
 
@@ -1380,7 +1380,7 @@ validate.required('first_name')  # would fail
 validate.required('last_name')  # would fail
 ```
 
-## Required If
+## Required_if
 
 Used to make sure that value is present and not empty only if an other field has a given value.
 ```python
@@ -1393,7 +1393,7 @@ Used to make sure that value is present and not empty only if an other field has
 validate.required_if('first_name', 'last_name', 'Gamji')
 ```
 
-## Required With
+## Required_with
 
 Used to make sure that value is present and not empty onlyf if any of the other specified fields are present.
 ```python

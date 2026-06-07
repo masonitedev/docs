@@ -12,7 +12,7 @@ Masonite 2 adds some improvements with imports. Previously we had to import prov
 from masonite.providers.UploadProvider import UploadProvider
 ```
 
-Because of this, all framework [Service Providers](broken-reference) will need to cut out the redundant last part. The above code should be changed to:
+Because of this, all framework Service Providers will need to cut out the redundant last part. The above code should be changed to:
 
 ```python
 from masonite.providers import UploadProvider
@@ -160,7 +160,7 @@ Some variable internals have changed to prepend a double underscore to them to b
 
 ## Autoloading
 
-Masonite 2 comes with a new autoloader. This can load all classes in any directory you specify right into the [Service Container](broken-reference) when the server first starts. This is incredibly useful for loading your models, commands or tasks right into the container.
+Masonite 2 comes with a new autoloader. This can load all classes in any directory you specify right into the Service Container when the server first starts. This is incredibly useful for loading your models, commands or tasks right into the container.
 
 Simply add a new `AUTOLOAD` constant in your `config/application.py` file. This is the entire section of the autoload configuration.
 
@@ -195,7 +195,7 @@ AUTOLOAD = [
 
 !!! warning
 
-    Be caution that this will autoload all models into the [Service Container](broken-reference) with the class name as the key and the class as the binding.
+    Be caution that this will autoload all models into the Service Container with the class name as the key and the class as the binding.
 
 ## RedirectionProvider
 

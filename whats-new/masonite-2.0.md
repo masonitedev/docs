@@ -25,7 +25,7 @@ class YourController:
 
 !!! success
 
-    Read more in the [Controllers](broken-reference) documentation.
+    Read more in the Controllers documentation.
 
 ## Tinker Command
 
@@ -114,7 +114,7 @@ def show(self):
 
 !!! success
 
-    Read more in the [Requests](broken-reference) documentation.
+    Read more in the Requests documentation.
 
 ## Request Only
 
@@ -122,7 +122,7 @@ Added a new Request.only method to fetch only specific inputs needed.
 
 !!! success
 
-    Read more in [Requests](broken-reference) documentation.
+    Read more in Requests documentation.
 
 ## Get Request Method
 
@@ -130,7 +130,7 @@ Added a new `Request.get_request_method()` method to the `Request` class.
 
 !!! success
 
-    Read more in [Requests](broken-reference) documentation.
+    Read more in Requests documentation.
 
 ## New Argument in Request.all
 
@@ -142,7 +142,7 @@ Request.all(internal_variables=False)
 
 !!! success
 
-    Read more in [Requests](broken-reference) documentation.
+    Read more in Requests documentation.
 
 ## Made several changes to the CSRF Middleware
 
@@ -158,7 +158,7 @@ Added a new default package to Masonite that allows scheduling recurring tasks:
 
 !!! success
 
-    Read about Masonite Scheduler under the [Task Scheduling](broken-reference) documentation.
+    Read about Masonite Scheduler under the Task Scheduling documentation.
 
 ## Added Database Seeding Support
 
@@ -174,7 +174,7 @@ Now all templates have a new static function in them to improve rendering of sta
 
 !!! success
 
-    Read more in the [Static Files](broken-reference) documentation.
+    Read more in the Static Files documentation.
 
 ## Added a New Password Helper
 
@@ -188,7 +188,7 @@ password('secret') # returns bcrypt password
 
 !!! success
 
-    Read more in the [Encryption](broken-reference) documentation.
+    Read more in the Encryption documentation.
 
 ## Added Dot Notation To Upload Drivers And Dictionary Support To Driver Locations.
 
@@ -212,7 +212,7 @@ DRIVERS = {
 
 !!! success
 
-    Read more in the [Uploading](broken-reference) documentation.
+    Read more in the Uploading documentation.
 
 ## Added Status Code Provider
 
@@ -220,7 +220,7 @@ Masonite 2 removes the bland error codes such as 404 and 500 errors and replaces
 
 !!! success
 
-    Read more in the [Status Codes](broken-reference) documentation.
+    Read more in the Status Codes documentation.
 
 ## Added Explicitly Imported Providers
 

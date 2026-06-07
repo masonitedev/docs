@@ -4,7 +4,6 @@ Masonite Debugbar is a really helpful way to see the stats of your application w
 
 Masonite Debugbar also supports AJAX calls which you will be able to see directly in a dropdown on your toolbar.
 
-![](<../.gitbook/assets/Screen Shot 2022-01-23 at 2.26.56 PM.png>)
 
 ## Install
 

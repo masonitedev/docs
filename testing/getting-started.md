@@ -198,18 +198,18 @@ Test are stopped by returning a pytest 2 exit code (user interruption).
 
 Masonite comes with different helpers that can ease writing tests. Some of them have already been explained in sections above.
 
-- [withExceptionsHandling](#withExceptionsHandling)
-- [withoutExceptionsHandling](#withoutExceptionsHandling)
-- [withCsrf](#withCsrf)
-- [withoutCsrf](#withoutCsrf)
-- [withCookies](#withCookies)
-- [withHeaders](#withHeaders)
-- [fakeTime](#fakeTime)
-- [fakeTimeTomorrow](#fakeTimeTomorrow)
-- [fakeTimeYesterday](#fakeTimeYesterday)
-- [fakeTimeInFuture](#fakeTimeInFuture)
-- [fakeTimeInPast](#fakeTimeInPast)
-- [restoreTime](#restoreTime)
+- [withExceptionsHandling](#withexceptionshandling)
+- [withoutExceptionsHandling](#withoutexceptionshandling)
+- [withCsrf](#withcsrf)
+- [withoutCsrf](#withoutcsrf)
+- [withCookies](#withcookies)
+- [withHeaders](#withheaders)
+- [fakeTime](#faketime)
+- [fakeTimeTomorrow](#faketimetomorrow)
+- [fakeTimeYesterday](#faketimeyesterday)
+- [fakeTimeInFuture](#faketimeinfuture)
+- [fakeTimeInPast](#faketimeinpast)
+- [restoreTime](#restoretime)
 
 ## withExceptionsHandling
 

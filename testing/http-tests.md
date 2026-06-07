@@ -144,7 +144,7 @@ Masonite provides a variety of assertions methods to inspect and verify request/
 - [assertIsNotNamed](#assertisnotnamed)
 - [assertIsStatus](#assertisstatus)
 - [assertNotFound](#assertnotfound)
-- [assertOk](#assertokk)
+- [assertOk](#assertok)
 - [assertCreated](#assertcreated)
 - [assertSuccessful](#assertsuccessful)
 - [assertUnauthorized](#assertunauthorized)
@@ -233,6 +233,14 @@ Assert that the response has the given HTTP status code:
 
 ```python
 self.get("/").assertIsStatus(201)
+```
+
+### assertNotFound
+
+Assert that the response returns a 404 status code:
+
+```python
+self.get("/some/unknown/page").assertNotFound()
 ```
 
 ### assertOk
@@ -343,6 +351,14 @@ Assert that the request contains the given cookie name and is expired.
 
 ```python
 self.get("/").assertCookieExpired(name)
+```
+
+### assertCookieNotExpired
+
+Assert that the request contains the given cookie name and is not expired.
+
+```python
+self.get("/").assertCookieNotExpired(name)
 ```
 
 ### assertCookieMissing
@@ -561,7 +577,7 @@ unit test.
 - [dumpResponseHeaders](#dumpresponseheaders)
 - [ddHeaders](#ddheaders)
 - [dumpSession](#dumpsession)
-- [ddSession](#ddssession)
+- [ddSession](#ddsession)
 
 ### dumpRequestHeaders
 

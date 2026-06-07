@@ -8,7 +8,7 @@ This handler has a logic to decide how to handle exceptions depending on the exc
 
 Every exception is also automatically logged with its full traceback through the [logging](logging.md) system.
 
-This handler has by default one driver [Exceptionite](https://github.com/MasoniteFramework/exceptionite) which is responsible of handling errors in development by providing a lot of context to help debug your application.
+This handler has by default one driver [Exceptionite](https://github.com/masonitedev/exceptionite) which is responsible of handling errors in development by providing a lot of context to help debug your application.
 
 ## Debug Mode
 

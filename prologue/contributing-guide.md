@@ -1,3 +1,5 @@
+# Contribution Guide
+
 When contributing to Masonite, please first discuss the change you wish to make via a GitHub issue. Starting with a GitHub issue allows all contributors and maintainers to have a chance to give input on the issue. It creates a public forum to discuss the best way to implement the issue, fix, or improvement. It also creates an open discussion on if the issue will even be permitted to be in the project.
 
 Please note we have a code of conduct, please follow it in all your interactions with the project. You can find it in this in this documentation as well as all of Masonite's repositories.

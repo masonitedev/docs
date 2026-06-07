@@ -34,7 +34,7 @@ def show(self, user_id, view: View):
 
 !!! success
 
-    Learn more in the [Controllers documentation here](broken-reference).
+    Learn more in the Controllers documentation here.
 
 ## Added a storage manager and disk storage drivers
 
@@ -46,7 +46,7 @@ We can now specify directly in the configuration file whether or not the threadi
 
 !!! success
 
-    Learn more in the [Queues documentation here](broken-reference).
+    Learn more in the Queues documentation here.
 
 ## Added new HTTP Verbs
 
@@ -62,7 +62,7 @@ ROUTES = [
 
 !!! success
 
-    Learn more in the [Routes documentation here](../the-basics/routing.md#http-verbs).
+    Learn more in the [Routes documentation here](../the-basics/routing.md#available-route-methods).
 
 ## JSON error responses
 
@@ -110,7 +110,7 @@ $ craft serve --dont-reload
 
 !!! success
 
-    Learn more in the [Craft commands documentation here](broken-reference).
+    Learn more in the Craft commands documentation here.
 
 ## Added Accept('\*') to drivers
 
@@ -123,13 +123,13 @@ def show(self, upload: Upload):
 
 !!! success
 
-    Learn more in the [Uploading documentation here](broken-reference).
+    Learn more in the Uploading documentation here.
 
 ## Added much more view helpers
 
 !!! success
 
-    Learn more in the [Views documentation here](broken-reference).
+    Learn more in the Views documentation here.
 
 ## All Tests are now unittests
 
@@ -137,7 +137,7 @@ We moved from pytest to unittests for test structures.
 
 !!! success
 
-    Learn more in the [Testing documentation here](broken-reference).
+    Learn more in the Testing documentation here.
 
 ## Added a better way to run database tests
 
@@ -163,11 +163,11 @@ We can now do:
 </form>
 ```
 
-In order to learn how to use this you can visit the [documentation here](broken-reference).
+In order to learn how to use this you can visit the documentation here.
 
 !!! success
 
-    Learn more in the [Requests documentation here](broken-reference).
+    Learn more in the Requests documentation here.
 
 ## Added a completely new validation library
 
@@ -177,7 +177,7 @@ The new way is MUCH better. You can read about it in the new [validation section
 
 !!! success
 
-    Learn more in the [Validation documentation here](broken-reference).
+    Learn more in the Validation documentation here.
 
 ## Auth class does not need the request class.
 
@@ -242,7 +242,7 @@ def show(self, auth: Auth):
 
 !!! success
 
-    Learn more in the [Authentication documentation here](broken-reference).
+    Learn more in the Authentication documentation here.
 
 ## Changed all regex compiling to be done before the server starts
 
@@ -258,7 +258,7 @@ This is scheduled to be set by default in the next major version of Masonite
 
 !!! success
 
-    Learn more in the [Service Container documentation here](broken-reference).
+    Learn more in the Service Container documentation here.
 
 ## Added a new `with_errors()` method in order to cut down on setting an errors session.
 
@@ -295,4 +295,4 @@ def show(self, request: Request, validate: Validator):
 
 !!! success
 
-    Learn more in the [Requests documentation here](broken-reference).
+    Learn more in the Requests documentation here.
