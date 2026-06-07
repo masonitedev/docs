@@ -6,7 +6,10 @@ Many times you need to expose your database primary keys to the frontend. For ex
 
 Typically you want to hide these key values from a hacker trying to change these values easily.
 
-With the Masonite hashing feature you can change a value like `10` to `l9avmeG` and prevent exposing those sensitive integer values.
+With the Masonite hashing feature you can change a value like `10` to `98FqgRu` and prevent exposing those sensitive integer values.
+
+!!! note
+    Since Masonite 5.3, hashes are generated with [Sqids](https://sqids.org) (the successor of Hashids). Generated values differ from the ones produced by Masonite ≤ 5.2 — hashed IDs are meant to be ephemeral (encoded in a response, decoded on the next request), so this only affects hashes persisted across versions.
 
 ## Setup
 
@@ -51,8 +54,8 @@ You can use the helper directly to encode or decode integers easily:
 from masonite.essentials.helpers import hashid
 
 def show(self):
-  hashid(10) #== l9avmeG
-  hashid('l9avmeG', decode=True) #== 10
+  hashid(10) #== 98FqgRu
+  hashid('98FqgRu', decode=True) #== 10
 ```
 
 ## Templates
