@@ -109,6 +109,7 @@ nav:
   - Home: README.md
   - The Project:
     - Release Notes:
+      - "Masonite 5.3": whats-new/masonite-5.3.md
       - "Masonite 5.1": whats-new/masonite-5.1.md
       - "Masonite 5.0": whats-new/masonite-5.0.md
     - "Upgrade Guide": upgrade-guide/masonite-4.0-to-5.0.md
