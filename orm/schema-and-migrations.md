@@ -39,7 +39,7 @@ class MigrationForUsersTable(Migration):
         Run the migrations.
         """
         with self.schema.create("users") as table:
-            table.increments('id')
+            table.increments('id').primary()
             table.string('username')
             table.string('email').unique()
             table.string('password')
@@ -70,9 +70,10 @@ class MigrationForUsersTable(Migration):
 | `table.small_integer()` | SMALL INT equivalent column. |
 | `table.medium_integer()` | MEDIUM INT equivalent column. |
 | `table.big_integer()` | BIG INT equivalent column. |
-| `table.increments()` | The auto incrementing version of the table. An unsigned non nullable auto incrementing integer. |
-| `table.tiny_increments()` | TINY auto incrementing equivalent column. |
-| `table.big_increments()` | An unsigned non nullable auto incrementing big integer. Use this if you expect the rows in a table to be very large |
+| `table.id()` | An unsigned auto incrementing big integer set as the table's primary key. Shortcut for `table.big_increments('id').primary()`. |
+| `table.increments()` | An unsigned non nullable auto incrementing integer. Add `.primary()` to use it as the primary key. |
+| `table.tiny_increments()` | TINY auto incrementing equivalent column. Add `.primary()` to use it as the primary key. |
+| `table.big_increments()` | An unsigned non nullable auto incrementing big integer. Use this if you expect the rows in a table to be very large. Add `.primary()` to use it as the primary key. |
 | `table.binary()` | BINARY equivalent column. Sometimes is text field on unsupported databases. |
 | `table.boolean()` | BOOLEAN equivalent column. |
 | `table.json()` | JSON equivalent column. |
@@ -93,6 +94,22 @@ class MigrationForUsersTable(Migration):
 | `table.soft_deletes()` | A nullable DATETIME column named `deleted_at`. This is used by the [SoftDeletes](models.md#soft-deleting) scope. |
 | `table.table_comment("The users table")` | Adds a comment to the table. |
 
+### Auto-incrementing columns and primary keys
+
+`increments()`, `tiny_increments()` and `big_increments()` create plain auto-numbered columns — they do **not** make the column the table's primary key. Chain `.primary()` to get the primary key behavior, or use `table.id()` which does it for you:
+
+```python
+with self.schema.create("invoice") as table:
+    table.uuid("id").primary()        # any column type can be the primary key
+    table.big_increments("reference") # auto-numbered, but not the primary key
+```
+
+A few platform notes for auto-incrementing columns that are **not** the primary key:
+
+* **SQLite** raises a `QueryException` — SQLite only supports auto-increment on the `INTEGER PRIMARY KEY` column.
+* **MySQL** and **Postgres** add a `UNIQUE` constraint to the column (MySQL requires an auto-increment column to be keyed).
+
+> **Upgrading from 3.0?** `*increments()` used to set the column as the primary key implicitly. Add `.primary()` to those column definitions to keep the same schema: `table.increments('id').primary()`. `table.id()` is unchanged.
 
 ## Changes & Rolling Back Migrations
 
@@ -150,6 +167,18 @@ $ masonite-orm migrate:refresh --seed CustomTable
 ```
 
 > **CustomTable** is the name of the seeder without "Seeder" suffix. Internally we will run the desired CustomTableSeeder.
+
+## Running Arbitrary Queries in Migrations
+
+Sometimes a migration needs to run raw SQL that the schema builder does not cover (a `SET` statement, a data backfill, custom DDL). You can get a query builder bound to the same connection settings as the migration's schema:
+
+```python
+def up(self):
+    builder = self.schema.query_builder()
+    builder.statement("SET session_replication_role = replica")
+```
+
+The schema reuses one cached database connection for all of its operations. If you need a second, independent connection (for example to run statements outside the migration transaction), `self.schema.new_connection()` always creates a fresh one without replacing the cached connection.
 
 ## Modifiers
 

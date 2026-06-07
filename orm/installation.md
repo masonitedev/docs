@@ -149,10 +149,34 @@ db_url("sqlite://")
 db_url("sqlite://masonite.sqlite3")
 ```
 
+## Connection Options
+
+Each connection accepts an `options` dictionary that is passed through to the underlying database driver, so any option the driver understands can be set from the configuration:
+
+* **MySQL**: every key is passed directly as a keyword argument to `pymysql.connect()` — for example `connect_timeout`, `charset`, `ssl`, or `read_timeout`.
+* **Postgres**: keys that are valid `psycopg2.connect()` arguments (`sslmode`, `sslcert`, `connect_timeout`, `keepalives`, `application_name`, …) are passed through directly. Any other key is treated as a PostgreSQL server setting and sent as `-c key=value` on connection — for example `statement_timeout` or `search_path`.
+* **SQLite**: keys that are valid `sqlite3.connect()` arguments (`timeout`, `isolation_level`, `check_same_thread`, …) are passed through directly. Any other key is applied as a `PRAGMA` statement after connecting — for example `journal_mode` or `synchronous`.
+* **MSSQL**: known options are mapped to their canonical ODBC keywords (see the [MSSQL](#mssql) section below). Any other key is appended verbatim to the pyodbc connection string as a `Key=Value` pair — for example `Encrypt` or `TrustServerCertificate`.
+
+```python
+"postgres": {
+    "host": "127.0.0.1",
+    "driver": "postgres",
+    "database": "masonite",
+    "user": "root",
+    "password": "",
+    "port": 5432,
+    "options": {
+        "sslmode": "require",          # psycopg2 connect argument
+        "connect_timeout": 10,         # psycopg2 connect argument
+        "statement_timeout": 5000,     # server setting, sent as -c statement_timeout=5000
+    }
+},
+```
 
 ## MSSQL
 
-Masonite ORM supports Microsoft SQL Server and several options to modify the connection string. All available options are:
+Masonite ORM supports Microsoft SQL Server and several options to modify the connection string. Known options are mapped to their canonical ODBC keywords and any other key is appended verbatim to the connection string as a `Key=Value` pair. The known options are:
 
 ```python
 "mssql": {
