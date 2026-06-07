@@ -1438,6 +1438,12 @@ This is really useful for passwords when you want to make sure a password has at
 validate.strong('password', length=8, special=2, uppercase=3)
 ```
 
+You can also check the value against the [Have I Been Pwned](https://haveibeenpwned.com/Passwords) breached-passwords database. Only the first 5 characters of the password's SHA-1 hash are sent to the API (k-anonymity), never the password itself:
+
+```python
+validate.strong('password', breach=True)
+```
+
 ## Timezone
 
 You can also validate that a value passed in a valid timezone
