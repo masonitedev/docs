@@ -142,6 +142,7 @@ nav:
     - "Compiling Assets": the-basics/compiling-assets.md
     - "Sessions": the-basics/sessions.md
     - "Validation": the-basics/validation.md
+    - "Form Requests": the-basics/form-requests.md
     - "Error Handling": the-basics/error-handling.md
     - "Logging": the-basics/logging.md
   - The Toolbox:
