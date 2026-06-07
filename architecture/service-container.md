@@ -145,7 +145,7 @@ This will get keys like "SentryExceptionHook" and "SentryHandlerHook"
 You can also collect all subclasses of an object. You may use this if you want to collect all instances of a specific class from the container:
 
 ```python
-from cleo import Command
+from masonite.commands import Command
 ...
 app.collect(Command)
 # Returns {'FirstCommand': <class ...>, 'AnotherCommand': ...}
