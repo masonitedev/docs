@@ -188,6 +188,20 @@ nav:
     - "Extending": testing/extending.md
   - Official Packages:
     - "Masonite Debugbar": official-packages/masonite-debugbar.md
+    - Collapsar:
+      - "Quickstart": official-packages/collapsar/quickstart.md
+      - Fields:
+        - "Overview": official-packages/collapsar/fields/overview.md
+        - "Visibility": official-packages/collapsar/fields/visibility.md
+        - Field Types:
+          - "Text Input": official-packages/collapsar/fields/field-types/text-input.md
+          - "Boolean": official-packages/collapsar/fields/field-types/boolean.md
+          - "Select": official-packages/collapsar/fields/field-types/select.md
+          - "Calendar": official-packages/collapsar/fields/field-types/calendar.md
+          - "Password": official-packages/collapsar/fields/field-types/password.md
+          - "RichText": official-packages/collapsar/fields/field-types/rich-text.md
+      - "Validation": official-packages/collapsar/validation.md
+      - "Contributing": official-packages/collapsar/contributing.md
   - How-to Guides:
     - "Handling AJAX requests with expired authentication": how-to-guides/expired-auth-with-ajax.md
   - Previous Releases:
