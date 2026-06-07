@@ -36,7 +36,7 @@ Thanks to ReS4 for the original driver implementation.
 
 ## Vite and Tailwind CSS 4
 
-New projects build their frontend with [Vite](https://vite.dev) and [Tailwind CSS 4](https://tailwindcss.com), replacing Laravel Mix and webpack:
+New projects build their frontend with [Vite](https://vite.dev) and [Tailwind CSS 4](https://tailwindcss.com), replacing the legacy `laravel-mix` webpack pipeline:
 
 ```text title="terminal"
 $ npm install

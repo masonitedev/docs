@@ -1,7 +1,7 @@
 Masonite uses [Vite](https://vite.dev) to compile your frontend assets, with [Tailwind CSS](https://tailwindcss.com) preconfigured. You don't need to be an expert in either Vite or NPM to compile assets.
 
 !!! note
-    Projects generated with Masonite ≤ 5.2 used Laravel Mix. Existing projects keep working — the `mix()` template helper is still available — but new projects ship with Vite. To migrate an existing project, copy the `vite.config.js`, `package.json`, `resources/js` and `resources/css` files from a freshly generated project.
+    Projects generated with Masonite ≤ 5.2 used `laravel-mix`. Existing projects keep working — the `mix()` template helper is still available — but new projects ship with Vite. To migrate an existing project, copy the `vite.config.js`, `package.json`, `resources/js` and `resources/css` files from a freshly generated project.
 
 ## Getting Started
 
@@ -92,9 +92,9 @@ You can also have NPM wait for changes and recompile when changes are detected i
 $ npm run watch
 ```
 
-## Using Laravel Mix (legacy)
+## Legacy projects (`laravel-mix`)
 
-Projects created before Masonite 5.3 use [Laravel Mix](https://laravel-mix.com). The `mix()` template helper resolves hashed filenames from the Mix manifest and remains available:
+Projects created before Masonite 5.3 build their assets with the [`laravel-mix`](https://laravel-mix.com) package. The `mix()` template helper resolves hashed filenames from the Mix manifest and remains available:
 
 ```html
 <script src="{{ mix('resources/js/app.js') }}"></script>
