@@ -34,7 +34,7 @@ blog/
 ├── craft
 ├── package.json
 ├── requirements.txt
-├── webpack.mix.js
+├── vite.config.js
 └── wsgi.py
 ```
 
@@ -64,7 +64,7 @@ Your database [migrations](../orm/schema-and-migrations.md) and [seeds](../orm/s
 
 ### The `resources` Directory
 
-The uncompiled sources of your frontend assets — CSS and JavaScript — which are built by Laravel Mix via `webpack.mix.js` and `package.json`. See [Compiling Assets](../the-basics/compiling-assets.md).
+The uncompiled sources of your frontend assets — CSS and JavaScript — which are built by Vite via `vite.config.js` and `package.json`. See [Compiling Assets](../the-basics/compiling-assets.md).
 
 ### The `routes` Directory
 
@@ -97,4 +97,4 @@ Your [tests](../testing/getting-started.md). It ships with a project-level `Test
 | `craft` | The entry point for the [Craft console](../digging-deeper/commands.md): `python craft serve`, `python craft make:controller`, `python craft migrate`, ... |
 | `wsgi.py` | The WSGI entry point that creates and boots your application. Production servers like gunicorn point at it — see [Deployment](deployment.md). |
 | `requirements.txt` | Your Python dependencies, pinned to `masonite-framework>=5.0,<6` and `masonite-framework-orm>=3.0,<4`. |
-| `package.json` / `webpack.mix.js` | The Node toolchain for [compiling assets](../the-basics/compiling-assets.md). Only needed if your app has a frontend build. |
+| `package.json` / `vite.config.js` | The Node toolchain for [compiling assets](../the-basics/compiling-assets.md). Only needed if your app has a frontend build. |
