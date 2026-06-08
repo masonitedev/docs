@@ -110,17 +110,24 @@ ROUTES += Auth.routes()
 
 This will register the following routes:
 
-| URI                   | Description                                             |
-| --------------------- | ------------------------------------------------------- |
-| GET /login            | Displays a login form for the user                      |
-| POST /login           | Attempts a login for the user                           |
-| GET /home             | A home page for the user after a login attempt succeeds |
-| GET /register         | Displays a registration form for the user               |
-| POST /register        | Saved the posted information and creates a new user     |
-| GET /password_reset   | Displays a password reset form                          |
-| POST /password_reset  | Attempts to reset the users password                    |
-| GET /change_password  | Displays a form to request a new password               |
-| POST /change_password | Requests a new password                                 |
+| URI                      | Description                                                      |
+| ------------------------ | --------------------------------------------------------------- |
+| GET /login               | Displays a login form for the user                              |
+| POST /login              | Attempts a login for the user                                   |
+| POST /logout             | Logs the user out — submit it from a form with the CSRF token   |
+| GET /home                | A home page for the user after a login attempt succeeds         |
+| GET /register            | Displays a registration form for the user                       |
+| POST /register           | Saves the posted information and creates a new user             |
+| GET /password_reset      | Displays a password reset form                                  |
+| POST /password_reset     | Attempts to reset the users password                            |
+| GET /change_password     | Displays a form to request a new password                       |
+| POST /change_password    | Requests a new password                                         |
+| GET /email/verify/notice | Notice page asking the user to check their inbox                |
+| GET /email/verify/@token | Verifies a signed link and marks the email as verified          |
+| POST /email/resend       | Resends the verification email (requires an authenticated user) |
+
+!!! note
+    The `logout` route is a **POST** route, so a logout control must be submitted from a `<form>` that includes the `{{ csrf_field }}`. A plain `<a href="/logout">` link will no longer work.
 
 # Guards
 
@@ -135,3 +142,78 @@ from masonite.request import Request
 def login(self, auth: Auth, request: Request):
   user = auth.guard("custom").attempt(request.input('email'), request.input("password")) #== <app.User.User>
 ```
+
+# Email Verification
+
+Masonite ships an email verification flow built around the `MustVerifyEmail`
+mixin. It lets you send a signed verification link on registration and keep
+unverified users out of selected routes until they confirm their address.
+
+## Setup
+
+Mix `MustVerifyEmail` into your `User` model and add a nullable `verified_at`
+column to the users table.
+
+```python
+from masoniteorm.models import Model
+from masonite.authentication import Authenticates
+from masonite.auth import MustVerifyEmail
+
+
+class User(Model, Authenticates, MustVerifyEmail):
+    pass
+```
+
+```python
+# A migration for the verified_at column
+def up(self):
+    with self.schema.table("users") as table:
+        table.timestamp("verified_at").nullable()
+```
+
+The mixin adds three methods to the model:
+
+| Method                      | Description                                                |
+| --------------------------- | ---------------------------------------------------------- |
+| `has_verified_email()`      | Whether `verified_at` is set                               |
+| `mark_email_as_verified()`  | Stamps `verified_at` with the current time and saves       |
+| `verify_email(mail, request)` | Emails a signed verification link to the user            |
+
+## Sending the verification email
+
+When `User` mixes in `MustVerifyEmail`, the scaffolded `RegisterController`
+automatically emails a verification link after a successful registration and
+redirects to `/email/verify/notice` instead of `/home`. The link points at
+`GET /email/verify/@token`, which validates the signed token and calls
+`mark_email_as_verified()`.
+
+Users can request a fresh link by submitting the resend form on the notice page
+(`POST /email/resend`), which requires them to be logged in.
+
+## Protecting routes
+
+Register the `verified` middleware and add it to any route that should only be
+reachable by users who have confirmed their email:
+
+```python
+from masonite.middleware import VerifiesEmailMiddleware
+
+# in your Kernel route_middleware
+route_middleware = {
+    # ...
+    "verified": VerifiesEmailMiddleware,
+}
+```
+
+```python
+Route.get("/dashboard", "DashboardController@show").middleware("auth", "verified")
+```
+
+Unauthenticated visitors are redirected to `/login` and unverified ones to
+`/email/verify/notice`.
+
+## Reacting to verification
+
+The verification controller fires an `auth.email_verified` event with the user
+once their email is confirmed, so you can hook in extra behaviour (a welcome
+email, analytics, ...) by listening for it.

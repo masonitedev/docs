@@ -18,6 +18,21 @@ order to view a command documentation, prefix the name of the command with `help
 python craft help serve
 ```
 
+## Running the development server
+
+The `serve` command runs the development server. Pass `--host` and `--port` to
+change the address it binds to:
+
+```terminal
+python craft serve --host 0.0.0.0 --port 9000
+```
+
+When you do, Masonite rewrites the host and port of `application.app_url` for
+the lifetime of that server, so URLs generated while serving (`url()`,
+`asset()`, mail links) resolve to the address you are actually serving from.
+The scheme and path of your configured `APP_URL` are preserved, and the URL is
+left untouched if it is not set.
+
 # Creating Commands
 
 Commands can be created with a simple command class inheriting from Masonite `Command` class:
@@ -192,3 +207,17 @@ class AppProvider(Provider):
 ```
 
 When you run `python craft` you will now see the command you added.
+
+## Disabling commands
+
+Command registration can be turned off entirely when you build the
+`Application` — handy for WSGI processes that never run the CLI and want to skip
+building the command suite:
+
+```python
+application = Application(base_path(), commands_enabled=False)
+```
+
+The command registry is still bound, so providers can attempt to register
+commands during boot, but nothing is kept. The flag defaults to `True`, so
+existing applications are unaffected.
